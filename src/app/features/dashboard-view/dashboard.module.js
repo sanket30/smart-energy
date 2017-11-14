@@ -1,5 +1,7 @@
 (function (angular) {
     'use strict';
 
-    angular.module('smartEnergy.dashboard', []);
+    angular.module('smartEnergy.dashboard', [
+        'smartEnergy.app.dateRangeSelector'
+    ]);
 })(angular);

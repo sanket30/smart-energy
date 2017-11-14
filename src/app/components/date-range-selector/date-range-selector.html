@@ -29,11 +29,8 @@
                     <div class="col-sm-1">
                         <a type="button"
                            class="btn btn-primary"
-                           ng-disabled="vm.isDisabled() || vm.errMessage"
+                           ng-disabled="vm.errMessage"
                            ng-click="vm.applyDates()">Apply</a>
-                    </div>
-                    <div class="col-sm-3">
-                        <up-adh-export class="pull-right" loading="vm.loading"></up-adh-export>
                     </div>
                 </div>
             </form>
