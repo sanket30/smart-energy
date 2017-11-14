@@ -3,6 +3,19 @@
     position: -webkit-sticky;
     position: sticky;
     top: 0;
+
+    .date-range-selector {
+      .color-red {
+        color: red;
+      }
+      .panel {
+        margin-bottom: 10px;
+      }
+    }
+
+    .btn-selected {
+      background-color: #185ba4;
+    }
   }
 }
 

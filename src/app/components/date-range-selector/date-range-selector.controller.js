@@ -8,22 +8,38 @@
     function DateRangeSelectorController($rootScope) {
         var vm = this;
 
-        vm.$onInit = onInit();
-        vm.applyDates = applyDates;
+        vm.$onInit = onInit;
         vm.checkDates = checkDates;
-        vm.isDisabled = isDisabled;
+        vm.applyDatesThroughButtonGroup = applyDatesThroughButtonGroup;
+        vm.applyDatesThroughClick = applyDatesThroughClick;
 
         function onInit() {
             vm.dates = {
-                startDate: new Date(moment().subtract(5, 'days').format('LLLL')),
+                startDate: new Date(moment().subtract(1, 'days').format('LLLL')),
+                endDate: new Date(moment().format('LLLL'))
+            };
+            vm.buttonGroup = [
+                { name: 'daily', date: 1 },
+                { name: 'weekly', date: 7 },
+                { name: 'monthly', date: 30 }
+            ];
+            vm.selectedRange = vm.buttonGroup[0];
+        }
+
+        function applyDatesThroughButtonGroup(obj) {
+            vm.selectedRange = obj;
+            vm.errMessage = '';
+            vm.dates = {
+                startDate: new Date(moment().subtract(obj.date, 'days').format('LLLL')),
                 endDate: new Date(moment().format('LLLL'))
             };
 
+            applyDates();
         }
 
-        function isDisabled() {
-
-            return false;
+        function applyDatesThroughClick() {
+            vm.selectedRange = [];
+            applyDates()
         }
 
         function applyDates() {
@@ -31,6 +47,7 @@
                 startDate: moment(vm.dates.startDate).valueOf(),
                 endDate: moment(vm.dates.endDate).valueOf()
             });
+            console.log(vm.dates.startDate, vm.dates.endDate);
         }
 
         function checkDates(startDate, endDate) {

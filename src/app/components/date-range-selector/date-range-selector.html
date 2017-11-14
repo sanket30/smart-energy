@@ -30,7 +30,16 @@
                         <a type="button"
                            class="btn btn-primary"
                            ng-disabled="vm.errMessage"
-                           ng-click="vm.applyDates()">Apply</a>
+                           ng-click="vm.applyDatesThroughClick()">Apply</a>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="btn-group" role="group">
+                            <button ng-repeat="btn in vm.buttonGroup"
+                                    class="btn btn-primary"
+                                    ng-class="{'btn-selected': (vm.selectedRange == btn)}"
+                                    ng-click="vm.applyDatesThroughButtonGroup(btn)">{{btn.name}}
+                            </button>
+                        </div>
                     </div>
                 </div>
             </form>
