@@ -51,7 +51,12 @@
 
         function applyDatesThroughClick() {
             vm.selectedRange = [];
-            applyDates()
+            applyDates();
+        }
+
+        function isDisabled() {
+
+            return false;
         }
 
         function applyDates() {
@@ -62,7 +67,7 @@
             });
         }
 
-        function checkDates() {
+        function checkDates(startDate, endDate) {
             vm.errMessage = '';
             vm.invalidDate = false;
 
