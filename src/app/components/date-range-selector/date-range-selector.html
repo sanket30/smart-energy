@@ -1,0 +1,44 @@
+<div class="date-range-selector">
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <form>
+                <div class="row">
+                    <div class="col-xs-1">
+                        <label for="startDate" class="control-label">Start Date:</label>
+                    </div>
+                    <div class="col-xs-3">
+                        <input type="datetime-local"
+                               ng-model="vm.dates.startDate"
+                               placeholder="yyyy-MM-ddTHH:mm:ss"
+                               class="form-control"
+                               id="startDate"
+                               ng-change="vm.checkDates(vm.dates.startDate,vm.dates.endDate)"/>
+                    </div>
+                    <div class="col-xs-1">
+                        <label for="endDate" class="control-label">End Date:</label>
+                    </div>
+                    <div class="col-xs-3">
+                        <input type="datetime-local"
+                               ng-model="vm.dates.endDate"
+                               placeholder="yyyy-MM-ddTHH:mm:ss"
+                               class="form-control"
+                               id="endDate"
+                               ng-change="vm.checkDates(vm.dates.startDate,vm.dates.endDate)"/>
+                        <span class="color-red">{{vm.errMessage}}</span>
+                    </div>
+                    <div class="col-sm-1">
+                        <a type="button"
+                           class="btn btn-primary"
+                           ng-disabled="vm.isDisabled() || vm.errMessage"
+                           ng-click="vm.applyDates()">Apply</a>
+                    </div>
+                    <div class="col-sm-3">
+                        <up-adh-export class="pull-right" loading="vm.loading"></up-adh-export>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<span up-kit-spinner={{vm.loading}}></span>
+
