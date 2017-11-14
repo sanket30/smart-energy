@@ -5,7 +5,8 @@
         .module('smartEnergy.app', [
             'smartEnergy.header',
             'smartEnergy.footer',
-            'smartEnergy.dashboard'
+            'smartEnergy.dashboard',
+            'smartEnergy.timeseries'
         ])
         .config(moduleConfig)
         .run(moduleRun);
