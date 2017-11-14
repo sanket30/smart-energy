@@ -20,7 +20,7 @@
             };
             vm.buttonGroup = [
                 { name: 'daily', date: 1 },
-                { name: 'weekly', date: 7 },
+                { name: '10 days', date: 10 },
                 { name: 'monthly', date: 30 }
             ];
             vm.selectedRange = vm.buttonGroup[0];
