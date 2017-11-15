@@ -2,8 +2,10 @@
     'use strict';
 
     angular.module('smartEnergy.dashboard', [
-        'smartEnergy.timeseries',
         'smartEnergy.app.dateRangeSelector',
-        'smartEnergy.app.totalImpact'
+        'smartEnergy.timeseries',
+        'smartEnergy.app.totalImpact',
+        'smartEnergy.solar',
+        'smartEnergy.battery'
     ]);
 })(angular);

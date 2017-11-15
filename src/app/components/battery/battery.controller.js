@@ -2,10 +2,10 @@
     'use strict';
 
     angular
-        .module('smartEnergy.timeseries')
-        .controller('timeSeriesController', timeSeriesController);
+        .module('smartEnergy.battery')
+        .controller('batteryController', batteryController);
 
-    function timeSeriesController($http, $scope) {
+    function batteryController($http, $scope) {
         var vm = this;
         vm.categories = [];
         vm.dateChange = {};
@@ -28,7 +28,7 @@
         }
 
         function getData(test) {
-            var url = test ? 'app/features/timeseries/mock_data_daily.json' : 'app/features/timeseries/mock_data.json';
+            var url = test ? 'app/components/battery/mock_data_daily.json' : 'app/components/battery/mock_data.json';
 
             return $http({ method: 'GET', url: url })
                 .then(function (result) {
@@ -37,7 +37,7 @@
         }
 
         function plotChart() {
-            Highcharts.chart('container', getChartConfig());
+            Highcharts.chart('battery', getChartConfig());
         }
 
         function getCategories() {

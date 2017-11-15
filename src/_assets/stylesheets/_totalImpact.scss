@@ -1,6 +1,18 @@
 .total-impact {
+  .panel {
+    border: 0;
+    margin-bottom: 0;
+  }
   .icon-size {
     width: 40px;
     height: 40px;
+  }
+
+  .h4-class {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-left: 20px;
+    font-size: 17px;
+    color: #777777;
   }
 }

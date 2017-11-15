@@ -4,12 +4,14 @@
   top: 0;
   z-index: 1;
 
+  .panel {
+    border: 0;
+    margin-bottom: 0;
+  }
+
   .date-range-selector {
     .color-red {
       color: red;
-    }
-    .panel {
-      margin-bottom: 10px;
     }
   }
 
