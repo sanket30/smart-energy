@@ -7,24 +7,51 @@
                         <label for="startDate" class="control-label">Start Date:</label>
                     </div>
                     <div class="col-xs-3">
-                        <input type="datetime-local"
-                               ng-model="vm.dates.startDate"
-                               placeholder="yyyy-MM-ddTHH:mm:ss"
-                               class="form-control"
-                               id="startDate"
-                               ng-change="vm.checkDates(vm.dates.startDate,vm.dates.endDate)"/>
+                        <div class="input-group">
+                            <input
+                                type="text"
+                                uib-datepicker-popup
+                                popup-placement="bottom-right"
+                                popover-trigger="'outsideClick'"
+                                ng-model="vm.dates.startDate"
+                                ng-model-options="vm.dateModelOptions"
+                                datepicker-options="vm.datePickerOptions"
+                                class="form-control"
+                                ng-class="{'ngInvalidDate': vm.invalidDate}"
+                                is-open="vm.isStartDatePickerOpen"
+                                datepicker-mode="'day'"
+                                show-button-bar="false"
+                                ng-change="vm.checkDates()"
+                                >
+                            <span class="input-group-btn">
+                                <button type="button" class="btn btn-default" ng-click="vm.openStartDatePicker($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+                            </span>
+                        </div>
                     </div>
                     <div class="col-xs-1">
                         <label for="endDate" class="control-label">End Date:</label>
                     </div>
                     <div class="col-xs-3">
-                        <input type="datetime-local"
-                               ng-model="vm.dates.endDate"
-                               placeholder="yyyy-MM-ddTHH:mm:ss"
-                               class="form-control"
-                               id="endDate"
-                               ng-change="vm.checkDates(vm.dates.startDate,vm.dates.endDate)"/>
-                        <span class="color-red">{{vm.errMessage}}</span>
+                        <div class="input-group">
+                            <input
+                            type="text"
+                            uib-datepicker-popup
+                            popup-placement="bottom-right"
+                            popover-trigger="'outsideClick'"
+                            ng-model="vm.dates.endDate"
+                            ng-model-options="vm.dateModelOptions"
+                            datepicker-options="vm.datePickerOptions"
+                            class="form-control"
+                            ng-class="{'ngInvalidDate': vm.invalidDate}"
+                            is-open="vm.isEndDatePickerOpen"
+                            datepicker-mode="'day'"
+                            show-button-bar="false"
+                            ng-change="vm.checkDates()"
+                            >
+                            <span class="input-group-btn">
+                                <button type="button" class="btn btn-default" ng-click="vm.openEndDatePicker($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+                            </span>
+                        </div>                           
                     </div>
                     <div class="col-sm-1">
                         <a type="button"
@@ -42,6 +69,7 @@
                         </div>
                     </div>
                 </div>
+                <span class="color-red">{{vm.errMessage}}
             </form>
         </div>
     </div>
