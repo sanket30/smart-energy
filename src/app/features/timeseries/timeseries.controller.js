@@ -36,10 +36,10 @@
             return $http({ method: 'GET', url: url })
                 .then(function (result) {
                     vm.data = _(result.data)
-                        .sortBy('validTime')
+                        .sortBy('dateTime')
                         .filter(function (date) {
-                            return moment(date.validTime).valueOf() > vm.dateChange.startDate
-                                && moment(date.validTime).valueOf() < vm.dateChange.endDate;
+                            return moment(date.dateTime).valueOf() > vm.dateChange.startDate
+                                && moment(date.dateTime).valueOf() < vm.dateChange.endDate;
                         })
                         .value();
 
@@ -55,7 +55,7 @@
 
         function getCategories() {
             vm.categories = _.map(vm.data, function (e) {
-                return moment(e.validTime).tz('UTC');
+                return moment(e.dateTime).tz('UTC');
             });
             return vm.categories;
         }

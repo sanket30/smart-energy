@@ -5,34 +5,43 @@
         .module('smartEnergy.battery')
         .controller('batteryController', batteryController);
 
-    function batteryController($http, $scope) {
+    function batteryController($http, $rootScope, $scope) {
         var vm = this;
         vm.categories = [];
-        vm.dateChange = {};
+        vm.dateChange = {
+            startDate: moment(new Date(moment().subtract(1, 'days').format('LLLL'))).valueOf() - (new Date() - new Date().setHours(0, 0, 0, 0)),
+            endDate: moment(new Date(moment().format('LLLL'))).valueOf() - (new Date() - new Date().setHours(0, 0, 0, 0)),
+            dateRange: {
+                name: "daily",
+                date: 1
+            }
+        };
 
         vm.$onInit = init;
 
         $scope.$on('date:change', function (event, val) {
             vm.dateChange = val;
-            if (_.get(vm.dateChange, ['dateRange', 'name']) === 'daily') {
-                init('test');
-            } else {
-                init() ;
-            }
+            init();
         });
 
-        function init(test) {
-            getData(test).then(function () {
+        function init() {
+            getData().then(function () {
                 plotChart();
             });
         }
 
-        function getData(test) {
-            var url = test ? 'app/components/battery/mock_data_daily.json' : 'app/components/battery/mock_data.json';
+        function getData() {
+            var url = 'app/features/timeseries/mock_data.json';
 
             return $http({ method: 'GET', url: url })
                 .then(function (result) {
-                    vm.data = _.sortBy(result.data, ['validTime']);
+                    vm.data = _(result.data)
+                        .sortBy('dateTime')
+                        .filter(function (date) {
+                            return moment(date.dateTime).valueOf() > vm.dateChange.startDate
+                                && moment(date.dateTime).valueOf() < vm.dateChange.endDate;
+                        })
+                        .value();
                 });
         }
 
@@ -42,7 +51,7 @@
 
         function getCategories() {
             vm.categories = _.map(vm.data, function (e) {
-                return moment(e.validTime).tz('UTC');
+                return moment(e.dateTime).tz('UTC');
             });
             return vm.categories;
         }
@@ -83,9 +92,14 @@
                     plotLines: [{
                         color: 'red', // Color value
                         dashStyle: 'longdashdot', // Style of the plot line. Default to solid
-                        value: moment().hour() + moment().minute()/60, // Value of where the line will appear
+                        value: moment().hour() + moment().minute() / 60, // Value of where the line will appear
                         width: 2, // Width of the line
-                        zIndex:4
+                        zIndex: 4
+                    }],
+                    plotBands: [{ // mark the weekend
+                        color: '#FCFFC5',
+                        from: moment().hour() + moment().minute() / 60,
+                        to: 24
                     }]
                 }
             } else {
@@ -100,7 +114,13 @@
                         color: 'red', // Color value
                         dashStyle: 'longdashdot', // Style of the plot line. Default to solid
                         value: moment().diff(moment(_.get(vm.dateChange, 'startDate')), 'days') * 24, // Value of where the line will appear
-                        width: 2 // Width of the line
+                        width: 2, // Width of the line
+                        zIndex: 4
+                    }],
+                    plotBands: [{ // mark the weekend
+                        color: '#FCFFC5',
+                        from: moment().diff(moment(_.get(vm.dateChange, 'startDate')), 'days') * 24,
+                        to: 1000 // imaginary highest value to end plotband
                     }]
                 }
             }
@@ -123,7 +143,6 @@
                     data: getSplineData()
                 }],
                 xAxis: getXAxis(),
-
                 yAxis: [{ // Primary yAxis
                     min: getMinValue(),
                     max: getMaxValue(),
