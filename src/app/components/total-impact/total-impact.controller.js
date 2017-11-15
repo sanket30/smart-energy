@@ -17,7 +17,7 @@
                 value: 400,
                 footer: 'energy produced'
             }, {
-                name: '../../../_assets/images/dollar.svg',
+                name: '../../../_assets/images/money.svg',
                 prefix: '$',
                 value: 35700,
                 footer: 'dollars saved'
@@ -27,7 +27,7 @@
                 value: 12600,
                 footer: 'carbon offset'
             }, {
-                name: '../../../_assets/images/gallon.svg',
+                name: '../../../_assets/images/gas.svg',
                 suffix: 'gallons',
                 value: 14000,
                 footer: 'gasoline saved'
