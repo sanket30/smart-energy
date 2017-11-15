@@ -111,8 +111,7 @@
         function getChartConfig() {
             return {
                 chart: {
-                    type: 'column',
-                    width: 300
+                    type: 'column'
                 },
                 series: [{
                     yAxis: 0,
