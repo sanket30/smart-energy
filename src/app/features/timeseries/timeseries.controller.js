@@ -5,7 +5,7 @@
         .module('smartEnergy.timeseries')
         .controller('timeSeriesController', timeSeriesController);
 
-    function timeSeriesController($http, $scope) {
+    function timeSeriesController($http, $rootScope, $scope) {
         var vm = this;
         vm.categories = [];
         vm.dateChange = {
@@ -42,6 +42,10 @@
                                 && moment(date.validTime).valueOf() < vm.dateChange.endDate;
                         })
                         .value();
+
+                    $rootScope.$broadcast('data:change', {
+                        data: vm.data
+                    });
                 });
         }
 
