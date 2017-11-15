@@ -1,241 +1,241 @@
 [{
-  "dateTime": "2017-11-30T06:00:00.491Z",
-  "endTime": "2017-12-01T05:59:59.491Z",
+  "dateTime": "2017-11-30T06:00:00.015Z",
+  "endTime": "2017-12-01T05:59:59.015Z",
   "unit": "kWh",
-  "reading": "47240.97",
-  "solarEnergy": "10393.01",
-  "gridEnergy": "36847.96",
-  "costSaving": "$1351.09"
+  "reading": "22524.99",
+  "solarEnergy": "4955.50",
+  "gridEnergy": "17569.49",
+  "costSaving": "$644.21"
 }, {
-  "dateTime": "2017-11-29T06:00:00.491Z",
-  "endTime": "2017-11-30T05:59:59.491Z",
+  "dateTime": "2017-11-29T06:00:00.015Z",
+  "endTime": "2017-11-30T05:59:59.015Z",
   "unit": "kWh",
-  "reading": "33285.41",
-  "solarEnergy": "7322.79",
-  "gridEnergy": "25962.62",
-  "costSaving": "$951.96"
+  "reading": "14611.93",
+  "solarEnergy": "3214.62",
+  "gridEnergy": "11397.30",
+  "costSaving": "$417.90"
 }, {
-  "dateTime": "2017-11-28T06:00:00.491Z",
-  "endTime": "2017-11-29T05:59:59.491Z",
+  "dateTime": "2017-11-28T06:00:00.015Z",
+  "endTime": "2017-11-29T05:59:59.015Z",
   "unit": "kWh",
-  "reading": "29251.16",
-  "solarEnergy": "6435.26",
-  "gridEnergy": "22815.90",
-  "costSaving": "$836.58"
+  "reading": "21527.57",
+  "solarEnergy": "4736.07",
+  "gridEnergy": "16791.50",
+  "costSaving": "$615.69"
 }, {
-  "dateTime": "2017-11-27T06:00:00.491Z",
-  "endTime": "2017-11-28T05:59:59.491Z",
+  "dateTime": "2017-11-27T06:00:00.015Z",
+  "endTime": "2017-11-28T05:59:59.015Z",
   "unit": "kWh",
-  "reading": "45750.18",
-  "solarEnergy": "10065.04",
-  "gridEnergy": "35685.14",
-  "costSaving": "$1308.46"
+  "reading": "14193.19",
+  "solarEnergy": "3122.50",
+  "gridEnergy": "11070.69",
+  "costSaving": "$405.93"
 }, {
-  "dateTime": "2017-11-26T06:00:00.491Z",
-  "endTime": "2017-11-27T05:59:59.491Z",
+  "dateTime": "2017-11-26T06:00:00.015Z",
+  "endTime": "2017-11-27T05:59:59.015Z",
   "unit": "kWh",
-  "reading": "380.59",
-  "solarEnergy": "83.73",
-  "gridEnergy": "296.86",
-  "costSaving": "$10.88"
+  "reading": "183.74",
+  "solarEnergy": "40.42",
+  "gridEnergy": "143.31",
+  "costSaving": "$5.25"
 }, {
-  "dateTime": "2017-11-25T06:00:00.491Z",
-  "endTime": "2017-11-26T05:59:59.491Z",
+  "dateTime": "2017-11-25T06:00:00.015Z",
+  "endTime": "2017-11-26T05:59:59.015Z",
   "unit": "kWh",
-  "reading": "249.81",
-  "solarEnergy": "54.96",
-  "gridEnergy": "194.85",
-  "costSaving": "$7.14"
+  "reading": "125.22",
+  "solarEnergy": "27.55",
+  "gridEnergy": "97.67",
+  "costSaving": "$3.58"
 }, {
-  "dateTime": "2017-11-24T06:00:00.491Z",
-  "endTime": "2017-11-25T05:59:59.491Z",
+  "dateTime": "2017-11-24T06:00:00.015Z",
+  "endTime": "2017-11-25T05:59:59.015Z",
   "unit": "kWh",
-  "reading": "32841.77",
-  "solarEnergy": "7225.19",
-  "gridEnergy": "25616.58",
-  "costSaving": "$939.27"
+  "reading": "23697.44",
+  "solarEnergy": "5213.44",
+  "gridEnergy": "18484.00",
+  "costSaving": "$677.75"
 }, {
-  "dateTime": "2017-11-23T06:00:00.491Z",
-  "endTime": "2017-11-24T05:59:59.491Z",
+  "dateTime": "2017-11-23T06:00:00.015Z",
+  "endTime": "2017-11-24T05:59:59.015Z",
   "unit": "kWh",
-  "reading": "29396.70",
-  "solarEnergy": "6467.28",
-  "gridEnergy": "22929.43",
-  "costSaving": "$840.75"
+  "reading": "14541.90",
+  "solarEnergy": "3199.22",
+  "gridEnergy": "11342.68",
+  "costSaving": "$415.90"
 }, {
-  "dateTime": "2017-11-22T06:00:00.491Z",
-  "endTime": "2017-11-23T05:59:59.491Z",
+  "dateTime": "2017-11-22T06:00:00.015Z",
+  "endTime": "2017-11-23T05:59:59.015Z",
   "unit": "kWh",
-  "reading": "47741.59",
-  "solarEnergy": "10503.15",
-  "gridEnergy": "37238.44",
-  "costSaving": "$1365.41"
+  "reading": "20678.21",
+  "solarEnergy": "4549.21",
+  "gridEnergy": "16129.00",
+  "costSaving": "$591.40"
 }, {
-  "dateTime": "2017-11-21T06:00:00.491Z",
-  "endTime": "2017-11-22T05:59:59.491Z",
+  "dateTime": "2017-11-21T06:00:00.015Z",
+  "endTime": "2017-11-22T05:59:59.015Z",
   "unit": "kWh",
-  "reading": "33197.71",
-  "solarEnergy": "7303.50",
-  "gridEnergy": "25894.21",
-  "costSaving": "$949.45"
+  "reading": "13609.32",
+  "solarEnergy": "2994.05",
+  "gridEnergy": "10615.27",
+  "costSaving": "$389.23"
 }, {
-  "dateTime": "2017-11-20T06:00:00.491Z",
-  "endTime": "2017-11-21T05:59:59.491Z",
+  "dateTime": "2017-11-20T06:00:00.015Z",
+  "endTime": "2017-11-21T05:59:59.015Z",
   "unit": "kWh",
-  "reading": "32006.91",
-  "solarEnergy": "7041.52",
-  "gridEnergy": "24965.39",
-  "costSaving": "$915.40"
+  "reading": "22994.87",
+  "solarEnergy": "5058.87",
+  "gridEnergy": "17936.00",
+  "costSaving": "$657.65"
 }, {
-  "dateTime": "2017-11-19T06:00:00.491Z",
-  "endTime": "2017-11-20T05:59:59.491Z",
+  "dateTime": "2017-11-19T06:00:00.015Z",
+  "endTime": "2017-11-20T05:59:59.015Z",
   "unit": "kWh",
-  "reading": "365.16",
-  "solarEnergy": "80.33",
-  "gridEnergy": "284.82",
-  "costSaving": "$10.44"
+  "reading": "189.52",
+  "solarEnergy": "41.69",
+  "gridEnergy": "147.82",
+  "costSaving": "$5.42"
 }, {
-  "dateTime": "2017-11-18T06:00:00.491Z",
-  "endTime": "2017-11-19T05:59:59.491Z",
+  "dateTime": "2017-11-18T06:00:00.015Z",
+  "endTime": "2017-11-19T05:59:59.015Z",
   "unit": "kWh",
-  "reading": "251.93",
-  "solarEnergy": "55.42",
-  "gridEnergy": "196.50",
-  "costSaving": "$7.21"
+  "reading": "114.50",
+  "solarEnergy": "25.19",
+  "gridEnergy": "89.31",
+  "costSaving": "$3.27"
 }, {
-  "dateTime": "2017-11-17T06:00:00.491Z",
-  "endTime": "2017-11-18T05:59:59.491Z",
+  "dateTime": "2017-11-17T06:00:00.015Z",
+  "endTime": "2017-11-18T05:59:59.015Z",
   "unit": "kWh",
-  "reading": "43778.29",
-  "solarEnergy": "9631.22",
-  "gridEnergy": "34147.06",
-  "costSaving": "$1252.06"
+  "reading": "16727.23",
+  "solarEnergy": "3679.99",
+  "gridEnergy": "13047.24",
+  "costSaving": "$478.40"
 }, {
-  "dateTime": "2017-11-16T06:00:00.491Z",
-  "endTime": "2017-11-17T05:59:59.491Z",
+  "dateTime": "2017-11-16T06:00:00.015Z",
+  "endTime": "2017-11-17T05:59:59.015Z",
   "unit": "kWh",
-  "reading": "32880.61",
-  "solarEnergy": "7233.73",
-  "gridEnergy": "25646.88",
-  "costSaving": "$940.39"
+  "reading": "21087.61",
+  "solarEnergy": "4639.27",
+  "gridEnergy": "16448.33",
+  "costSaving": "$603.11"
 }, {
-  "dateTime": "2017-11-15T06:00:00.491Z",
-  "endTime": "2017-11-16T05:59:59.491Z",
+  "dateTime": "2017-11-15T06:00:00.015Z",
+  "endTime": "2017-11-16T05:59:59.015Z",
   "unit": "kWh",
-  "reading": "47040.89",
-  "solarEnergy": "10349.00",
-  "gridEnergy": "36691.89",
-  "costSaving": "$1345.37"
+  "reading": "16376.59",
+  "solarEnergy": "3602.85",
+  "gridEnergy": "12773.74",
+  "costSaving": "$468.37"
 }, {
-  "dateTime": "2017-11-14T06:00:00.491Z",
-  "endTime": "2017-11-15T05:59:59.491Z",
+  "dateTime": "2017-11-14T06:00:00.015Z",
+  "endTime": "2017-11-15T05:59:59.015Z",
   "unit": "kWh",
-  "reading": "31008.74",
-  "solarEnergy": "6821.92",
-  "gridEnergy": "24186.82",
-  "costSaving": "$886.85"
+  "reading": "21171.69",
+  "solarEnergy": "4657.77",
+  "gridEnergy": "16513.92",
+  "costSaving": "$605.51"
 }, {
-  "dateTime": "2017-11-13T06:00:00.491Z",
-  "endTime": "2017-11-14T05:59:59.491Z",
+  "dateTime": "2017-11-13T06:00:00.015Z",
+  "endTime": "2017-11-14T05:59:59.015Z",
   "unit": "kWh",
-  "reading": "27232.36",
-  "solarEnergy": "5991.12",
-  "gridEnergy": "21241.24",
-  "costSaving": "$778.85"
+  "reading": "14049.98",
+  "solarEnergy": "3091.00",
+  "gridEnergy": "10958.99",
+  "costSaving": "$401.83"
 }, {
-  "dateTime": "2017-11-12T06:00:00.491Z",
-  "endTime": "2017-11-13T05:59:59.491Z",
+  "dateTime": "2017-11-12T06:00:00.015Z",
+  "endTime": "2017-11-13T05:59:59.015Z",
   "unit": "kWh",
-  "reading": "371.66",
-  "solarEnergy": "81.77",
-  "gridEnergy": "289.90",
-  "costSaving": "$10.63"
+  "reading": "198.54",
+  "solarEnergy": "43.68",
+  "gridEnergy": "154.86",
+  "costSaving": "$5.68"
 }, {
-  "dateTime": "2017-11-11T06:00:00.491Z",
-  "endTime": "2017-11-12T05:59:59.491Z",
+  "dateTime": "2017-11-11T06:00:00.015Z",
+  "endTime": "2017-11-12T05:59:59.015Z",
   "unit": "kWh",
-  "reading": "235.46",
-  "solarEnergy": "51.80",
-  "gridEnergy": "183.66",
-  "costSaving": "$6.73"
+  "reading": "133.86",
+  "solarEnergy": "29.45",
+  "gridEnergy": "104.41",
+  "costSaving": "$3.83"
 }, {
-  "dateTime": "2017-11-10T06:00:00.491Z",
-  "endTime": "2017-11-11T05:59:59.491Z",
+  "dateTime": "2017-11-10T06:00:00.015Z",
+  "endTime": "2017-11-11T05:59:59.015Z",
   "unit": "kWh",
-  "reading": "46255.25",
-  "solarEnergy": "10176.15",
-  "gridEnergy": "36079.09",
-  "costSaving": "$1322.90"
+  "reading": "20754.01",
+  "solarEnergy": "4565.88",
+  "gridEnergy": "16188.13",
+  "costSaving": "$593.56"
 }, {
-  "dateTime": "2017-11-09T06:00:00.491Z",
-  "endTime": "2017-11-10T05:59:59.491Z",
+  "dateTime": "2017-11-09T06:00:00.015Z",
+  "endTime": "2017-11-10T05:59:59.015Z",
   "unit": "kWh",
-  "reading": "28709.36",
-  "solarEnergy": "6316.06",
-  "gridEnergy": "22393.30",
-  "costSaving": "$821.09"
+  "reading": "22622.55",
+  "solarEnergy": "4976.96",
+  "gridEnergy": "17645.59",
+  "costSaving": "$647.01"
 }, {
-  "dateTime": "2017-11-08T06:00:00.491Z",
-  "endTime": "2017-11-09T05:59:59.491Z",
+  "dateTime": "2017-11-08T06:00:00.015Z",
+  "endTime": "2017-11-09T05:59:59.015Z",
   "unit": "kWh",
-  "reading": "44699.59",
-  "solarEnergy": "9833.91",
-  "gridEnergy": "34865.68",
-  "costSaving": "$1278.41"
+  "reading": "15419.60",
+  "solarEnergy": "3392.31",
+  "gridEnergy": "12027.28",
+  "costSaving": "$441.00"
 }, {
-  "dateTime": "2017-11-07T06:00:00.491Z",
-  "endTime": "2017-11-08T05:59:59.491Z",
+  "dateTime": "2017-11-07T06:00:00.015Z",
+  "endTime": "2017-11-08T05:59:59.015Z",
   "unit": "kWh",
-  "reading": "48204.83",
-  "solarEnergy": "10605.06",
-  "gridEnergy": "37599.76",
-  "costSaving": "$1378.66"
+  "reading": "15159.49",
+  "solarEnergy": "3335.09",
+  "gridEnergy": "11824.41",
+  "costSaving": "$433.56"
 }, {
-  "dateTime": "2017-11-06T06:00:00.491Z",
-  "endTime": "2017-11-07T05:59:59.491Z",
+  "dateTime": "2017-11-06T06:00:00.015Z",
+  "endTime": "2017-11-07T05:59:59.015Z",
   "unit": "kWh",
-  "reading": "32723.06",
-  "solarEnergy": "7199.07",
-  "gridEnergy": "25523.99",
-  "costSaving": "$935.88"
+  "reading": "22126.70",
+  "solarEnergy": "4867.87",
+  "gridEnergy": "17258.82",
+  "costSaving": "$632.82"
 }, {
-  "dateTime": "2017-11-05T05:00:00.491Z",
-  "endTime": "2017-11-06T05:59:59.491Z",
+  "dateTime": "2017-11-05T05:00:00.015Z",
+  "endTime": "2017-11-06T05:59:59.015Z",
   "unit": "kWh",
-  "reading": "403.70",
-  "solarEnergy": "88.81",
-  "gridEnergy": "314.89",
-  "costSaving": "$11.55"
+  "reading": "178.49",
+  "solarEnergy": "39.27",
+  "gridEnergy": "139.22",
+  "costSaving": "$5.10"
 }, {
-  "dateTime": "2017-11-04T05:00:00.491Z",
-  "endTime": "2017-11-05T04:59:59.491Z",
+  "dateTime": "2017-11-04T05:00:00.015Z",
+  "endTime": "2017-11-05T04:59:59.015Z",
   "unit": "kWh",
-  "reading": "230.04",
-  "solarEnergy": "50.61",
-  "gridEnergy": "179.43",
-  "costSaving": "$6.58"
+  "reading": "119.29",
+  "solarEnergy": "26.24",
+  "gridEnergy": "93.05",
+  "costSaving": "$3.41"
 }, {
-  "dateTime": "2017-11-03T05:00:00.491Z",
-  "endTime": "2017-11-04T04:59:59.491Z",
+  "dateTime": "2017-11-03T05:00:00.015Z",
+  "endTime": "2017-11-04T04:59:59.015Z",
   "unit": "kWh",
-  "reading": "29802.57",
-  "solarEnergy": "6556.57",
-  "gridEnergy": "23246.01",
-  "costSaving": "$852.35"
+  "reading": "14718.35",
+  "solarEnergy": "3238.04",
+  "gridEnergy": "11480.31",
+  "costSaving": "$420.94"
 }, {
-  "dateTime": "2017-11-02T05:00:00.491Z",
-  "endTime": "2017-11-03T04:59:59.491Z",
+  "dateTime": "2017-11-02T05:00:00.015Z",
+  "endTime": "2017-11-03T04:59:59.015Z",
   "unit": "kWh",
-  "reading": "43440.50",
-  "solarEnergy": "9556.91",
-  "gridEnergy": "33883.59",
-  "costSaving": "$1242.40"
+  "reading": "22003.30",
+  "solarEnergy": "4840.73",
+  "gridEnergy": "17162.58",
+  "costSaving": "$629.29"
 }, {
-  "dateTime": "2017-11-01T05:00:00.491Z",
-  "endTime": "2017-11-02T04:59:59.491Z",
+  "dateTime": "2017-11-01T05:00:00.015Z",
+  "endTime": "2017-11-02T04:59:59.015Z",
   "unit": "kWh",
-  "reading": "32909.68",
-  "solarEnergy": "7240.13",
-  "gridEnergy": "25669.55",
-  "costSaving": "$941.22"
+  "reading": "22151.73",
+  "solarEnergy": "4873.38",
+  "gridEnergy": "17278.35",
+  "costSaving": "$633.54"
 }]
