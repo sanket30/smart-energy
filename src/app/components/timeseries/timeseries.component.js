@@ -3,7 +3,7 @@
 
     angular.module('smartEnergy.timeseries')
         .component('timeSeries', {
-            templateUrl: 'app/features/timeseries/timeseries.html',
+            templateUrl: 'app/components/timeseries/timeseries.html',
             controller: 'timeSeriesController',
             controllerAs: 'vm',
             bindings: {

@@ -31,7 +31,7 @@
         }
 
         function getData() {
-            var url = 'app/features/timeseries/mock_data.json';
+            var url = 'app/components/solar/mock_data.json';
 
             return $http({ method: 'GET', url: url })
                 .then(function (result) {
