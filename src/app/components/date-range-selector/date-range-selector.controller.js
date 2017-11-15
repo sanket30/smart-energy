@@ -1,4 +1,4 @@
-(function () {
+(function (angular, moment) {
     'use strict';
 
     angular
@@ -12,6 +12,8 @@
         vm.checkDates = checkDates;
         vm.applyDatesThroughButtonGroup = applyDatesThroughButtonGroup;
         vm.applyDatesThroughClick = applyDatesThroughClick;
+        vm.openStartDatePicker = openStartDatePicker;
+        vm.openEndDatePicker = openEndDatePicker;
 
         function onInit() {
             vm.dates = {
@@ -24,6 +26,16 @@
                 { name: 'monthly', date: 30 }
             ];
             vm.selectedRange = vm.buttonGroup[0];
+            vm.isEndDatePickerOpen = false;
+            vm.isStartDatePickerOpen = false;
+            vm.datePickerOptions = {
+                showWeeks: false,
+                maxMode: 'day',
+                startingDay: 1
+            };
+            vm.dateModelOptions = {
+                timezone: moment.tz.guess()
+            };
         }
 
         function applyDatesThroughButtonGroup(obj) {
@@ -47,15 +59,26 @@
                 startDate: moment(vm.dates.startDate).valueOf(),
                 endDate: moment(vm.dates.endDate).valueOf()
             });
-            console.log(vm.dates.startDate, vm.dates.endDate);
         }
 
-        function checkDates(startDate, endDate) {
+        function checkDates() {
             vm.errMessage = '';
+            vm.invalidDate = false;
 
-            if (moment(startDate).valueOf() >= moment(endDate).valueOf()) {
+            if (moment(vm.dates.startDate).valueOf() >= moment(vm.dates.endDate).valueOf()) {
                 vm.errMessage = '* End Date should be greater than start date';
+                vm.invalidDate = true;
             }
         }
+
+        function openEndDatePicker(event) {
+            vm.isEndDatePickerOpen = !vm.isEndDatePickerOpen;
+            event.stopPropagation();
+        }
+
+        function openStartDatePicker(event) {
+            vm.isStartDatePickerOpen = !vm.isStartDatePickerOpen;
+            event.stopPropagation();
+        }
     }
-}());
+}(angular, moment));
