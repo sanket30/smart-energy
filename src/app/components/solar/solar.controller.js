@@ -5,7 +5,7 @@
         .module('smartEnergy.solar')
         .controller('solarController', solarController);
 
-    function solarController($http, $rootScope, $scope) {
+    function solarController($http, $scope) {
         var vm = this;
         vm.categories = [];
         vm.dateChange = {

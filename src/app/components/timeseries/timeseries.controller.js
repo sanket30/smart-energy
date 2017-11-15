@@ -5,8 +5,9 @@
         .module('smartEnergy.timeseries')
         .controller('timeSeriesController', timeSeriesController);
 
-    function timeSeriesController($http, $rootScope, $scope) {
+    function timeSeriesController($q, $http, $rootScope, $scope) {
         var vm = this;
+
         vm.categories = [];
         vm.dateChange = {
             startDate: moment(new Date(moment().subtract(1, 'days').format('LLLL'))).valueOf() - (new Date() - new Date().setHours(0, 0, 0, 0)),
@@ -25,27 +26,45 @@
         });
 
         function init() {
-            getData().then(function () {
+            $q.all([
+                getSolarData(),
+                getConsumptionData()
+            ]).then(function () {
+                $rootScope.$broadcast('data:change', {
+                    data: vm.solarData
+                });
                 plotChart();
             });
         }
 
-        function getData() {
+
+        function getSolarData() {
             var url = 'app/components/timeseries/mock_data.json';
 
             return $http({ method: 'GET', url: url })
                 .then(function (result) {
-                    vm.data = _(result.data)
+                    vm.solarData = _(result.data)
                         .sortBy('dateTime')
                         .filter(function (date) {
                             return moment(date.dateTime).valueOf() > vm.dateChange.startDate
                                 && moment(date.dateTime).valueOf() < vm.dateChange.endDate;
                         })
                         .value();
+                });
+        }
 
-                    $rootScope.$broadcast('data:change', {
-                        data: vm.data
-                    });
+        function getConsumptionData() {
+            var url = 'app/components/energy-consumption-data/energyPH.json';
+
+            return $http({ method: 'GET', url: url })
+                .then(function (result) {
+                    vm.consumptionData = _(result.data)
+                        .sortBy('dateTime')
+                        .filter(function (date) {
+                            return moment(date.dateTime).valueOf() > vm.dateChange.startDate
+                                && moment(date.dateTime).valueOf() < vm.dateChange.endDate;
+                        })
+                        .value();
                 });
         }
 
@@ -54,32 +73,24 @@
         }
 
         function getCategories() {
-            vm.categories = _.map(vm.data, function (e) {
+            vm.categories = _.map(vm.solarData, function (e) {
                 return moment(e.dateTime).tz('UTC');
             });
             return vm.categories;
         }
 
-        function getSplineData() {
-            vm.splineData = _.map(vm.data, function (e) {
+        function getSolarSplineData() {
+            vm.splineData = _.map(vm.solarData, function (e) {
                 return e.energy;
             });
-            vm.min = _.min(vm.splineData);
-            vm.max = _.max(vm.splineData);
 
             return vm.splineData;
         }
 
-        function getMinValue() {
-            vm.min = _.min(vm.splineData);
-
-            return vm.min;
-        }
-
-        function getMaxValue() {
-            vm.max = _.max(vm.splineData);
-
-            return vm.max;
+        function getConsumptionSplineData() {
+            return _.map(vm.consumptionData, function (e) {
+                return parseInt(e.reading);
+            });
         }
 
         function getXAxis() {
@@ -101,7 +112,7 @@
                         zIndex: 4
                     }],
                     plotBands: [{ // mark the weekend
-                        color: '#FCFFC5',
+                        color: '#ffae83',
                         from: moment().hour() + moment().minute() / 60,
                         to: 24
                     }]
@@ -122,7 +133,7 @@
                         zIndex: 4
                     }],
                     plotBands: [{ // mark the weekend
-                        color: '#FCFFC5',
+                        color: '#ffae83',
                         from: moment().diff(moment(_.get(vm.dateChange, 'startDate')), 'days') * 24,
                         to: 1000 // imaginary highest value to end plotband
                     }]
@@ -140,16 +151,19 @@
                 series: [{
                     yAxis: 0,
                     stacking: 'normal',
-                    data: getSplineData()
+                    data: getConsumptionSplineData()
+                },
+                    {
+                    yAxis: 0,
+                    stacking: 'normal',
+                        data: getSolarSplineData()
                 }, {
                     yAxis: 0,
                     type: 'spline',
-                    data: getSplineData()
+                        data: getSolarSplineData()
                 }],
                 xAxis: getXAxis(),
-                yAxis: [{ // Primary yAxis
-                    min: getMinValue(),
-                    max: getMaxValue(),
+                yAxis: [{
                     tickInterval: 10
                 }]
             };
