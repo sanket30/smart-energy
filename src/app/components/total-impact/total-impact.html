@@ -1,0 +1,35 @@
+<div class="total-impact">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            Total Impact
+        </div>
+        <div class="panel-body">
+            <div ng-repeat="val in vm.values"
+                 class="text-center">
+                <span ng-style="vm.width"
+                      class="pull-left">
+                    <img class="icon-size"
+                         ng-src="{{val.name}}">
+                    <div class="value">
+                        <h3>
+                           <span ng-if="val.prefix">
+                            {{val.prefix}}
+                        </span>
+                        <span>
+                            {{val.value}}
+                        </span>
+                        <span ng-if="val.suffix">
+                            {{val.suffix}}
+                        </span>
+                        </h3>
+                    </div>
+                    <div class="footer">
+                        {{val.footer}}
+                    </div>
+                </span>
+            </div>
+
+        </div>
+    </div>
+</div>
+
