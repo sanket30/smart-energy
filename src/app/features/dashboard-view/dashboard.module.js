@@ -3,7 +3,9 @@
 
     angular.module('smartEnergy.dashboard', [
         'smartEnergy.app.dateRangeSelector',
+        'smartEnergy.timeseries',
         'smartEnergy.app.totalImpact',
-        'smartEnergy.timeseries'
+        'smartEnergy.solar',
+        'smartEnergy.battery'
     ]);
 })(angular);

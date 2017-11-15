@@ -5,7 +5,7 @@
         .module('smartEnergy.app.energyDataService')
         .service('energyDataService', energyDataService);
 
-    function energyDataService($$http, $q) {
+    function energyDataService($http, $q) {
         var vm = this;
         var baseUrl = '';
 

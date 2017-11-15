@@ -4,8 +4,13 @@
   angular.module('smartEnergy.dashboard')
   .controller('DashboardController', DashboardController);
 
-    function DashboardController() {
+    function DashboardController($element, $window) {
         var vm = this;
 
+        vm.$onInit = init;
+
+        function init(){
+
+        }
     }
 })(angular);
