@@ -5,20 +5,33 @@
         .module('smartEnergy.timeseries')
         .controller('timeSeriesController', timeSeriesController);
 
-    function timeSeriesController($http) {
+    function timeSeriesController($http, $scope) {
         var vm = this;
         vm.categories = [];
+        vm.dateChange = {};
 
         vm.$onInit = init;
 
-        function init() {
-            getData().then(function () {
+        $scope.$on('date:change', function (event, val) {
+            vm.dateChange = val;
+            console.log(val);
+            if (_.get(vm.dateChange, ['dateRange', 'name']) === 'daily') {
+                init('test');
+            } else {
+                init() ;
+            }
+        });
+
+        function init(test) {
+            getData(test).then(function () {
                 plotChart();
             });
         }
 
-        function getData() {
-            return $http({ method: 'GET', url: 'app/features/timeseries/mock_data.json' })
+        function getData(test) {
+            var url = test ? 'app/features/timeseries/mock_data_daily.json' : 'app/features/timeseries/mock_data.json';
+
+            return $http({ method: 'GET', url: url })
                 .then(function (result) {
                     vm.data = _.sortBy(result.data, ['validTime']);
                 });
@@ -30,7 +43,7 @@
 
         function getCategories() {
             vm.categories = _.map(vm.data, function (e) {
-                return new Date(e.validTime);
+                return moment(e.validTime).tz('UTC');
             });
             return vm.categories;
         }
@@ -57,6 +70,45 @@
             return vm.max;
         }
 
+        function getXAxis() {
+            var output;
+
+            if (_.get(vm.dateChange, ['dateRange', 'name']) === 'daily') {
+                output = {
+                    categories: getCategories(),
+                    type: 'datetime',
+                    tickInterval: 2,
+                    labels: {
+                        format: '{value:%H:%M}'
+                    },
+                    plotLines: [{
+                        color: 'red', // Color value
+                        dashStyle: 'longdashdot', // Style of the plot line. Default to solid
+                        value: moment().hour() + moment().minute()/60, // Value of where the line will appear
+                        width: 2, // Width of the line
+                        zIndex:4
+                    }]
+                }
+            } else {
+                output = {
+                    categories: getCategories(),
+                    type: 'datetime',
+                    tickInterval: 20,
+                    labels: {
+                        format: '{value:%b:%e}'
+                    },
+                    plotLines: [{
+                        color: 'red', // Color value
+                        dashStyle: 'longdashdot', // Style of the plot line. Default to solid
+                        value: moment().diff(moment(_.get(vm.dateChange, 'startDate')), 'days') * 24, // Value of where the line will appear
+                        width: 2 // Width of the line
+                    }]
+                }
+            }
+
+            return output;
+        }
+
         function getChartConfig() {
             return {
                 chart: {
@@ -67,24 +119,16 @@
                     stacking: 'normal',
                     data: getSplineData()
                 }, {
-                    yAxis: 1,
+                    yAxis: 0,
                     type: 'spline',
                     data: getSplineData()
                 }],
-                xAxis: {
-                    categories: getCategories(),
-                    tickInterval: 100
-                },
+                xAxis: getXAxis(),
 
                 yAxis: [{ // Primary yAxis
                     min: getMinValue(),
                     max: getMaxValue(),
-                    tickInterval: 100
-                }, { // Secondary yAxis
-                    min: getMinValue(),
-                    max: getMaxValue(),
-                    tickInterval: 10,
-                    opposite: true
+                    tickInterval: 10
                 }]
             };
         }
