@@ -95,6 +95,11 @@
                         value: moment().hour() + moment().minute() / 60, // Value of where the line will appear
                         width: 2, // Width of the line
                         zIndex: 4
+                    }],
+                    plotBands: [{ // mark the weekend
+                        color: '#FCFFC5',
+                        from: moment().hour() + moment().minute() / 60,
+                        to: 24
                     }]
                 }
             } else {
@@ -111,6 +116,11 @@
                         value: moment().diff(moment(_.get(vm.dateChange, 'startDate')), 'days') * 24, // Value of where the line will appear
                         width: 2, // Width of the line
                         zIndex: 4
+                    }],
+                    plotBands: [{ // mark the weekend
+                        color: '#FCFFC5',
+                        from: moment().diff(moment(_.get(vm.dateChange, 'startDate')), 'days') * 24,
+                        to: 1000 // imaginary highest value to end plotband
                     }]
                 }
             }
