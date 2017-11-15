@@ -4,13 +4,17 @@
   angular.module('smartEnergy.dashboard')
   .controller('DashboardController', DashboardController);
 
-    function DashboardController($element, $window) {
+    function DashboardController() {
         var vm = this;
 
         vm.$onInit = init;
 
         function init(){
-
+            Highcharts.setOptions({
+                global: {
+                    useUTC: false
+                }
+            });
         }
     }
 })(angular);

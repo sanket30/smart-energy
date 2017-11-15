@@ -22,8 +22,8 @@
             };
             vm.buttonGroup = [
                 { name: 'daily', date: 1 },
-                { name: '10 days', date: 10 },
-                { name: 'monthly', date: 30 }
+                { name: '5 days', date: 2.5 },
+                { name: '10 days', date: 5 }
             ];
             vm.selectedRange = vm.buttonGroup[0];
             vm.isEndDatePickerOpen = false;
@@ -42,8 +42,8 @@
             vm.selectedRange = obj;
             vm.errMessage = '';
             vm.dates = {
-                startDate: new Date(moment().subtract(obj.date/2, 'days').format('LLLL')),
-                endDate: new Date(moment().add(obj.date/2, 'days').format('LLLL'))
+                startDate: new Date(moment().subtract(obj.date, 'days').format('LLLL')),
+                endDate: obj.date === 1 ? new Date(moment().format('LLLL')): new Date(moment().add(obj.date, 'days').format('LLLL'))
             };
 
             applyDates();
@@ -54,20 +54,16 @@
             applyDates();
         }
 
-        function isDisabled() {
-
-            return false;
-        }
-
         function applyDates() {
+            // convert date to milliseconds at midnight
             $rootScope.$broadcast('date:change', {
-                startDate: moment(vm.dates.startDate).valueOf(),
-                endDate: moment(vm.dates.endDate).valueOf(),
+                startDate: moment(vm.dates.startDate).valueOf() - (new Date()-new Date().setHours(0,0,0,0)),
+                endDate: moment(vm.dates.endDate).valueOf() - (new Date()-new Date().setHours(0,0,0,0)),
                 dateRange: vm.selectedRange
             });
         }
 
-        function checkDates(startDate, endDate) {
+        function checkDates() {
             vm.errMessage = '';
             vm.invalidDate = false;
 
