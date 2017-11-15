@@ -59,12 +59,13 @@
             });
 
             // https://cleantechnica.com/2014/03/22/solar-power-water-use-infographic/
+            // Oil (Petroleum) produces about 0.6% of electricity in 2016 (https://www.eia.gov/tools/faqs/faq.php?id=427&t=3)
 
             _.set(vm.values, [0, 'value'], (energyProduced * 0.001).toFixed(2));
             _.set(vm.values, [1, 'value'], (energyProduced * PRICE_KWH).toFixed(2));
             _.set(vm.values, [2, 'value'], (energyProduced * 0.0008485).toFixed(2));
-            _.set(vm.values, [3, 'value'], (energyProduced * 0.1).toFixed(2));
-            _.set(vm.values, [4, 'value'], (energyProduced * 0.25).toFixed(2));
+            _.set(vm.values, [3, 'value'], (energyProduced * 0.46).toFixed(2));
+            _.set(vm.values, [4, 'value'], (energyProduced * 5).toFixed(2));
         }
     }
 }(_));
