@@ -42,8 +42,8 @@
             vm.selectedRange = obj;
             vm.errMessage = '';
             vm.dates = {
-                startDate: new Date(moment().subtract(obj.date, 'days').format('LLLL')),
-                endDate: new Date(moment().format('LLLL'))
+                startDate: new Date(moment().subtract(obj.date/2, 'days').format('LLLL')),
+                endDate: new Date(moment().add(obj.date/2, 'days').format('LLLL'))
             };
 
             applyDates();
@@ -57,7 +57,8 @@
         function applyDates() {
             $rootScope.$broadcast('date:change', {
                 startDate: moment(vm.dates.startDate).valueOf(),
-                endDate: moment(vm.dates.endDate).valueOf()
+                endDate: moment(vm.dates.endDate).valueOf(),
+                dateRange: vm.selectedRange
             });
         }
 
