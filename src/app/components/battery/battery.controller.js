@@ -16,33 +16,59 @@
                 date: 1
             }
         };
+        var EMERGENCY_STORAGE = 50;
+        var MAX_STORAGE = 250;
+        var usedBatteryData = [];
+        var storedBatteryData = [];
+        var solarData;
 
         vm.$onInit = init;
 
-        $scope.$on('date:change', function (event, val) {
-            vm.dateChange = val;
+        $scope.$on('data:change', function (event, val) {
+            solarData = val.data;
             init();
         });
 
         function init() {
-            getData().then(function () {
-                plotChart();
-            });
+            generateBatteryUsage();
+            plotChart();
         }
 
-        function getData() {
-            var url = 'app/components/battery/mock_data.json';
+        function generateBatteryUsage() {
+            var initialValue = 50 + Math.random() * 10;
 
-            return $http({ method: 'GET', url: url })
-                .then(function (result) {
-                    vm.data = _(result.data)
-                        .sortBy('dateTime')
-                        .filter(function (date) {
-                            return moment(date.dateTime).valueOf() > vm.dateChange.startDate
-                                && moment(date.dateTime).valueOf() < vm.dateChange.endDate;
-                        })
-                        .value();
-                });
+            _.forEach(solarData, function(data) {
+                var energy = parseFloat(data.energy);
+                var storedEnergy;
+                var usedEnergy;
+
+                if (energy > 10) {
+                    if (initialValue > 150) {
+                        storedEnergy = initialValue + energy * 0.01 * 0.8;
+                        usedEnergy = energy * 0.99 * 0.9;
+                    } else if (initialValue < 150) {
+                        storedEnergy = initialValue + energy * 0.1 * 0.8;
+                        usedEnergy = energy * 0.9 * 0.9;
+                    }
+                } else {
+                    usedEnergy = initialValue * 0.75;
+                    storedEnergy = initialValue * 0.25 + energy * 0.8;
+                }
+                
+
+                if (storedEnergy > MAX_STORAGE) {
+                    usedEnergy += (storedEnergy - MAX_STORAGE);
+                    storedEnergy = MAX_STORAGE;
+                } else if (storedEnergy < EMERGENCY_STORAGE) {
+                    usedEnergy -= (EMERGENCY_STORAGE - storedEnergy);
+                    storedEnergy = EMERGENCY_STORAGE;
+                }
+                
+                initialValue = storedEnergy;
+
+                usedBatteryData.push(parseFloat((usedEnergy).toFixed(2)));
+                storedBatteryData.push(parseFloat((storedEnergy).toFixed(2)));
+            });
         }
 
         function plotChart() {
@@ -50,14 +76,14 @@
         }
 
         function getCategories() {
-            vm.categories = _.map(vm.data, function (e) {
+            vm.categories = _.map(solarData, function (e) {
                 return moment(e.dateTime).tz('UTC');
             });
             return vm.categories;
         }
 
         function getSplineData() {
-            vm.splineData = _.map(vm.data, function (e) {
+            vm.splineData = _.map(solarData, function (e) {
                 return e.energy;
             });
 
@@ -121,9 +147,12 @@
         }
 
         function getChartConfig() {
+            var a = usedBatteryData;
+            var b = [107, 31, 635, 203, 2, 107, 31, 635, 203, 2, 107, 31, 635, 203, 2, 107, 31, 635, 203, 2, 107, 31, 635, 203];
+
             return {
                 title: {
-                    text: 'Solar Consumption'
+                    text: 'Battery Level'
                 },
                 chart: {
                     type: 'column'
@@ -134,14 +163,15 @@
                 credits: {
                     enabled: false
                 },
-                series: [{
+                series: [
+                {
                     yAxis: 0,
-                    stacking: 'normal',
-                    data: getSplineData()
-                }, {
+                    name: 'Battery Available',
+                    data: storedBatteryData
+                },{
                     yAxis: 0,
-                    type: 'spline',
-                    data: getSplineData()
+                    name: 'Battery Used',
+                    data: usedBatteryData
                 }],
                 xAxis: getXAxis(),
                 yAxis: [{
