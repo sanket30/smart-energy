@@ -7,6 +7,7 @@
         'smartEnergy.app.totalImpact',
         'smartEnergy.solar',
         'smartEnergy.battery',
-        'smartEnergy.app.energyForecast'
+        'smartEnergy.app.energyForecast',
+        'smartEnergy.app.recommendation'
     ]);
 })(angular);

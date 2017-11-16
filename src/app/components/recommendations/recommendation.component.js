@@ -3,11 +3,10 @@
 
     angular
         .module('smartEnergy.app.recommendation')
-        .component('solarRecommendation', {
+        .component('recommendation', {
             bindings: {
-                config: '<'
             },
-            templateUrl: 'app/components/recommendation/recommendation.html',
+            templateUrl: 'app/components/recommendations/recommendation.html',
             controller: 'RecommendationController',
             controllerAs: 'vm'
         });
