@@ -8,7 +8,7 @@
   function HeaderController() {
     var vm = this;
 
-
+    vm.user = localStorage.getItem('SMART_USER');
   }
 
 })(angular);

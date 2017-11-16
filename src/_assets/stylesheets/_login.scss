@@ -1,0 +1,57 @@
+.login {
+  .header-title {
+    margin-top: 5px;
+  }
+
+  .login-header {
+    border-bottom: 1px solid lightgray;
+  }
+
+  .image-class {
+    max-height: 20px;
+  }
+
+  .uptake-logo {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  }
+
+  .login-title {
+    color: #cdcdcd;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #cdcdcd;
+    h2 {
+      margin-left: 0;
+      font-size: 30px;
+      font-weight: normal;
+      color: #898989;
+    }
+  }
+  .single-sign-on {
+    margin: 6% 32%;
+    border: 1px solid #ffffff;
+    padding: 10% 8%;
+    background-color: lightgray;
+    text-align: center;
+    border-radius: 5px;
+    .g-signin2 {
+      margin-left: 33%;
+    }
+    label {
+      display: block;
+      font-weight: normal;
+      padding-bottom: 10px;
+    }
+    button {
+      width: 150px;
+    }
+    .divider {
+      padding: 25px 0 10px;
+      .vertical-divider {
+        margin-top: 10px;
+        border-bottom: 1px solid #cdcdcd;
+      }
+    }
+  }
+}

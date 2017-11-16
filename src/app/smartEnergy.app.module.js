@@ -5,6 +5,7 @@
         .module('smartEnergy.app', [
             'smartEnergy.header',
             'smartEnergy.footer',
+            'smartEnergy.login',
             'smartEnergy.dashboard',
             'smartEnergy.timeseries'
         ])
@@ -13,10 +14,10 @@
 
     function moduleConfig($urlRouterProvider, $stateProvider) {
 
-        $urlRouterProvider.when('/', '/app/dashboard');
+        $urlRouterProvider.when('/', '/login');
 
         $urlRouterProvider.otherwise(function ($injector) {
-            $injector.get('$state').go("smartEnergy.404");
+            $injector.get('$state').go("login");
         });
 
         $stateProvider
@@ -42,6 +43,14 @@
                 url: "/dashboard",
                 templateUrl: 'app/features/dashboard-view/dashboard.tmpl.html',
                 controller: 'DashboardController',
+                controllerAs: 'vm',
+                resolve: {
+                }
+            })
+            .state('login', {
+                url: "/login",
+                templateUrl: 'app/features/login/login.html',
+                controller: 'LoginController',
                 controllerAs: 'vm',
                 resolve: {
                 }

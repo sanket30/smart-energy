@@ -20,8 +20,22 @@
         $locationProvider.html5Mode(true);
     }
 
-    function moduleRun($log, CONFIG) {
+    function moduleRun($log, CONFIG, $rootScope, $state) {
         $log.warn(CONFIG);
+      $rootScope.$on( '$stateChangeStart', function(e, toState  , toParams
+        , fromState, fromParams) {
+
+        var isLogin = toState.name === "login";
+        if(isLogin){
+          return; // no need to redirect
+        }
+
+        var name = localStorage.getItem('SMART_USER');
+        if (!name) {
+          e.preventDefault(); // stop current execution
+          $state.go('login');
+        }
+      });
     }
 
 })(angular);
