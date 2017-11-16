@@ -1,4 +1,4 @@
-.date-range {
+.date-range-selector {
   position: -webkit-sticky;
   position: sticky;
   top: 0;
@@ -16,7 +16,7 @@
   }
 
   .btn-selected {
-    background-color: #185ba4;
+    background-color: grey;
   }
 
   button.btn {
@@ -25,5 +25,13 @@
 
   .image-class {
     max-height: 20px;
+  }
+
+  .btn-default, .btn-default:hover {
+    background-image: none;
+  }
+
+  .btn-default:hover {
+    background-color: grey;
   }
 }

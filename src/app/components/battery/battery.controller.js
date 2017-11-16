@@ -152,7 +152,8 @@
         function getChartConfig() {
             return {
                 title: {
-                    text: 'Battery Level'
+                    text: 'Battery Level',
+                    align: 'left'
                 },
                 chart: {
                     type: 'column',

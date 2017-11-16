@@ -124,7 +124,8 @@
         function getChartConfig() {
             return {
                 title: {
-                    text: 'Solar Consumption'
+                    text: 'Solar Consumption',
+                    align: 'left'
                 },
                 chart: {
                     type: 'column',

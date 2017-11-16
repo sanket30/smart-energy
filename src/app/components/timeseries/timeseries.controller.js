@@ -163,7 +163,8 @@
         function getChartConfig() {
             return {
                 title: {
-                    text: 'Energy Consumption'
+                    text: 'Energy Consumption',
+                    align: 'left'
                 },
                 chart: {
                     type: 'column',
@@ -190,7 +191,7 @@
                     }, {
                         yAxis: 0,
                         type: 'spline',
-                        name: 'Historic Usage',
+                        name: 'Renewable Produced',
                         data: getSolarSplineData()
                     }
                 ],
