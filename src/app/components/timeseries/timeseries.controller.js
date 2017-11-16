@@ -184,6 +184,11 @@
                 credits: {
                     enabled: false
                 },
+                tooltip: {
+                    formatter: function () {
+                        return this.series.name + ':' + this.y;
+                    }
+                },
                 series: [
                     {
                         yAxis: 0,
