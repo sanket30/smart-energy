@@ -1,14 +1,15 @@
 <div class="date-range-selector">
-    <div class="panel panel-default">
-        <div class="panel-body">
+    <div class="">
+        <div class="">
             <form>
-                <div class="row">
+                <div class="">
                     <div class="col-xs-1">
-                        <label for="startDate" class="control-label">Start Date:</label>
+                        <label for="startDate" class="control-label">Start Date</label>
                     </div>
-                    <div class="col-xs-3">
+                    <div class="col-xs-2">
                         <div class="input-group">
                             <input
+                                id="startDate"
                                 type="text"
                                 uib-datepicker-popup
                                 popup-placement="bottom-right"
@@ -29,11 +30,12 @@
                         </div>
                     </div>
                     <div class="col-xs-1">
-                        <label for="endDate" class="control-label">End Date:</label>
+                        <label for="endDate" class="control-label">End Date</label>
                     </div>
-                    <div class="col-xs-3">
+                    <div class="col-xs-2">
                         <div class="input-group">
                             <input
+                            id="endDate"
                             type="text"
                             uib-datepicker-popup
                             popup-placement="bottom-right"
@@ -55,14 +57,14 @@
                     </div>
                     <div class="col-sm-1">
                         <a type="button"
-                           class="btn btn-primary"
+                           class="btn btn-default"
                            ng-disabled="vm.errMessage"
                            ng-click="vm.applyDatesThroughClick()">Apply</a>
                     </div>
-                    <div class="col-sm-3">
-                        <div class="btn-group pull-right" role="group">
+                    <div class="">
+                        <div class="btn-group" role="group">
                             <button ng-repeat="btn in vm.buttonGroup"
-                                    class="btn btn-primary"
+                                    class="btn btn-default"
                                     ng-class="{'btn-selected': (vm.selectedRange == btn)}"
                                     ng-click="vm.applyDatesThroughButtonGroup(btn)">{{btn.name}}
                             </button>

@@ -1,0 +1,30 @@
+.forecast-data {
+  .forecast-block {
+    margin-right: 60px;
+  }
+
+  .forecast-val {
+    text-align: right;
+    font-size: 1.6em;
+  }
+
+  .forecast-unit {
+    text-align: left;
+    font-size: 0.8em;
+    line-height: 3;
+  }
+
+  .forecast-day {
+    text-align: center;
+    margin-left: 15px;
+    margin-top: 5px;
+  }
+
+  .panel {
+    border: none;
+  }
+
+  .horizontal-line {
+    border: 1px solid;
+  }
+}

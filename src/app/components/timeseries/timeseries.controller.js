@@ -99,7 +99,7 @@
 
         function getConsumptionSplineData() {
             return _.map(vm.consumptionData, function (e) {
-                return parseInt(e.reading);
+                return parseInt(e.gridEnergy);
             });
         }
 

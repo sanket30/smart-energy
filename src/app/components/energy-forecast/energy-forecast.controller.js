@@ -51,13 +51,13 @@
         var solar = _.get(vm.forecastData, [key, 'solarEnergy'], 0);
         var consumption = _.get(vm.forecastData, [key, 'energyConsumption'], 0);
 
-        _.set(vm.forecastData, [key, 'renewable'], (solar * 100/consumption).toFixed(2) + '% renewable energy');
-        _.set(vm.forecastData, [key, 'grid'], ((consumption - solar) * 100/consumption).toFixed(2) + ' % grid energy');
-        _.set(vm.forecastData, [key, 'gridUsage'], (consumption - solar) + ' kWh Grid usage');
+        _.set(vm.forecastData, [key, 'renewable'], (solar * 100/consumption).toFixed(2) + '%');
+        _.set(vm.forecastData, [key, 'grid'], ((consumption - solar) * 100/consumption).toFixed(2) + ' %');
+        _.set(vm.forecastData, [key, 'gridUsage'], (consumption - solar).toFixed(2));
       });
-      
+
       vm.width = {
-        width: '20%'
+        width: '15%'
       };
     }
   }

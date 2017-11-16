@@ -11,7 +11,7 @@
 
   .date-range-selector {
     .color-red {
-      color: red;
+      color: black;
     }
   }
 
@@ -19,9 +19,8 @@
     background-color: #185ba4;
   }
 
-  label {
-    font-size: 1.2em;
-    line-height: 1.8;
+  button.btn {
+    user-select: none;
   }
 
   .image-class {

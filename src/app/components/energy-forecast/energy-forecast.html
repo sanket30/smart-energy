@@ -1,17 +1,17 @@
-<div class="total-impact">
+<div class="forecast-data">
         <div class="panel panel-default">
             <h4 class="h4-class">Energy Forecast</h4>
     
             <div class="panel-body">
                 <div ng-repeat="(key, val) in vm.forecastData"
-                     class="text-center">
+                     class="">
                     <span ng-style="vm.width"
-                          class="pull-left">
-                        <p>{{val.renewable}}</p>
-                        <p>{{val.grid}}</p>
-                        <p>{{val.gridUsage}}</p>
-                        <p>$ {{val.costSaved}} projected cost savings</p>
-                        <p>{{key}}</p>
+                          class="pull-left forecast-block">
+                        <div class="row"><span class="col-xs-7 forecast-val">{{val.renewable}}</span><span class=" forecast-unit">renewable energy</span></div>
+                        <div class="row"><span class="col-xs-7 forecast-val">{{val.grid}}</span><span class=" forecast-unit">grid energy</span></div>
+                        <div class="row"><span class="col-xs-7 forecast-val">{{val.gridUsage}}</span><span class=" forecast-unit">kWh Grid usage</span></div>
+                        <div class="row"><span class="col-xs-7 forecast-val">$ {{val.costSaved}}</span><span class=" forecast-unit">projected savings</span></div>
+                        <div class="row"><span class="col-xs-12 forecast-day">{{key}}</span></div>
                     </span>
                 </div>
             </div>
