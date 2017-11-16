@@ -14,7 +14,7 @@
 
     function moduleConfig($urlRouterProvider, $stateProvider) {
 
-        $urlRouterProvider.when('/', '/login');
+        $urlRouterProvider.when('/', '/app/dashboard');
 
         $urlRouterProvider.otherwise(function ($injector) {
             $injector.get('$state').go("login");

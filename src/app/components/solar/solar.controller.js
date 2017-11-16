@@ -9,19 +9,25 @@
         var vm = this;
         vm.categories = [];
         vm.dateChange = {
-            startDate: moment(new Date(moment().subtract(1, 'days').format('LLLL'))).valueOf() - (new Date() - new Date().setHours(0, 0, 0, 0)),
-            endDate: moment(new Date(moment().format('LLLL'))).valueOf() - (new Date() - new Date().setHours(0, 0, 0, 0)),
+            startDate: moment().startOf('day').valueOf(),
+            endDate: moment().endOf('day').valueOf(),
             dateRange: {
                 name: "daily",
                 date: 1
             }
         };
 
-        vm.$onInit = init;
+        // vm.$onInit = init;
 
-        $scope.$on('date:change', function (event, val) {
-            vm.dateChange = val;
-            init();
+        // $scope.$on('date:change', function (event, val) {
+        //     vm.dateChange = val;
+        //     init();
+        // });
+
+        $scope.$on('data:change', function (event, val) {
+            vm.data = val.data;
+            vm.dateChange = val.dateChange;
+            plotChart();
         });
 
         function init() {
@@ -110,7 +116,7 @@
                     plotLines: [{
                         color: '#696969', // Color value
                         dashStyle: 'longdashdot', // Style of the plot line. Default to solid
-                        value: moment().diff(moment(_.get(vm.dateChange, 'startDate')), 'days') * 24, // Value of where the line will appear
+                        value: _.get(vm.dateChange, ['dateRange', 'date']) * 24, // Value of where the line will appear
                         width: 2, // Width of the line
                         zIndex: 4
                     }],
@@ -120,7 +126,7 @@
                             text: 'Prediction range',
                             align: 'center'
                         },
-                        from: moment().diff(moment(_.get(vm.dateChange, 'startDate')), 'days') * 24,
+                        from: _.get(vm.dateChange, ['dateRange', 'date']) * 24, // Value of where the line will appear
                         to: 1000 // imaginary highest value to end plotband
                     }]
                 }

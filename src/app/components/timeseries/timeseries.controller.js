@@ -7,14 +7,21 @@
 
     function timeSeriesController($q, $http, $rootScope, $scope) {
         var vm = this;
-        var solarData;
         var consumptionData;
+        var forecatUrl = "http://ec2-54-91-170-212.compute-1.amazonaws.com:8080/api/energy-production/forecast/solar";
+        var observationUrl = "http://ec2-54-91-170-212.compute-1.amazonaws.com:8080/api/energy-production/observation/solar";
+        // var forecatUrl = "http://10.200.201.51:8080/api/energy-production/forecast/solar";
+        // var observationUrl = "http://10.200.201.51:8080/api/energy-production/observation/solar";
+        var observationData = [];
+        var forecastedData = [];
+        var braadcastSolarData;
+        var braadcastConsumptionData;
 
 
         vm.categories = [];
         vm.dateChange = {
-            startDate: moment(new Date(moment().subtract(1, 'days').format('LLLL'))).valueOf() - (new Date() - new Date().setHours(0, 0, 0, 0)),
-            endDate: moment(new Date(moment().format('LLLL'))).valueOf() - (new Date() - new Date().setHours(0, 0, 0, 0)),
+            startDate: moment().startOf('day').valueOf(),
+            endDate: moment().endOf('day').valueOf(),
             dateRange: {
                 name: "daily",
                 date: 1
@@ -22,6 +29,56 @@
         };
 
         vm.$onInit = init;
+        broadcast5DayPredictions();
+
+        function broadcast5DayPredictions() {
+            $q.all([
+                broadcast5DayPredictionSolar(forecatUrl),
+                broadcast5DayPredictionConsumption()
+            ]).then(function () {
+                $rootScope.$broadcast('forecast:change', {
+                    solarData: braadcastSolarData,
+                    consumptionData: braadcastConsumptionData
+                });
+            });
+        }
+
+        function broadcast5DayPredictionSolar(url) {
+            var dataUrl = url || 'app/components/timeseries/mock_data.json';
+            var data;
+            var startDate = moment().add(1, 'days').startOf('day').valueOf();
+            var endDate = moment().add(5, 'days').endOf('day').valueOf();
+
+            return $http({ method: 'GET', url: dataUrl })
+                .then(function (result) {
+                    var solarData = _.sortBy(result.data, ['dateTime']);
+
+                    braadcastSolarData = _(solarData)
+                        .filter(function (date) {
+                            return moment(date.dateTime).valueOf() >= startDate
+                                && moment(date.dateTime).valueOf() < endDate;
+                        })
+                        .value();
+                });
+        }
+
+        function broadcast5DayPredictionConsumption() {
+            var url = 'app/components/energy-consumption-data/energyPH.json';
+            var startDate = moment().add(1, 'days').startOf('day').valueOf();
+            var endDate = moment().add(5, 'days').endOf('day').valueOf();
+
+            return $http({ method: 'GET', url: url })
+                .then(function (result) {
+                    consumptionData = _.sortBy(result.data, ['dateTime']);
+
+                    braadcastConsumptionData = _(consumptionData)
+                        .filter(function (date) {
+                            return moment(date.dateTime).valueOf() >= startDate
+                                && moment(date.dateTime).valueOf() < endDate;
+                        })
+                        .value();
+                });
+        }
 
         $scope.$on('date:change', function (event, val) {
             vm.dateChange = val;
@@ -29,36 +86,77 @@
         });
 
         function init() {
+            vm.solarData = [];
+            observationData = [];
+            forecastedData = [];
+
             $q.all([
-                getSolarData(),
+                // getSolarData(),
+                getSolarData(forecatUrl, true),
+                getSolarData(observationUrl),
                 getConsumptionData()
             ]).then(function () {
+                vm.solarData = _.flatten(observationData.concat(forecastedData));
                 $rootScope.$broadcast('data:change', {
                     data: vm.solarData,
                     dateChange: vm.dateChange
                 });
-                $rootScope.$broadcast('forecast:change', {
-                    solarData: solarData,
-                    consumptionData: consumptionData
-                });
+                
                 plotChart();
             });
         }
 
 
-        function getSolarData() {
-            var url = 'app/components/timeseries/mock_data.json';
+        // function getSolarData() {
+        //     var url = 'app/components/timeseries/mock_data.json';
 
-            return $http({ method: 'GET', url: url })
+        //     return $http({ method: 'GET', url: url })
+        //         .then(function (result) {
+        //             solarData = _.sortBy(result.data, ['dateTime']);
+
+        //             vm.solarData = _(solarData)
+        //                 .filter(function (date) {
+        //                     return moment(date.dateTime).valueOf() > vm.dateChange.startDate
+        //                         && moment(date.dateTime).valueOf() < vm.dateChange.endDate;
+        //                 })
+        //                 .value();
+        //         });
+        // }
+
+
+        function getSolarData(url, isPredicted) {
+            var dataUrl = url || 'app/components/timeseries/mock_data.json';
+            var data;
+            var startDate = isPredicted ? moment().valueOf() : vm.dateChange.startDate;
+            var endDate = isPredicted ? vm.dateChange.endDate : moment().valueOf();
+            console.log(isPredicted, vm.dateChange);
+
+            if (!url) {
+                startDate = vm.dateChange.startDate;
+                endDate = vm.dateChange.endDate;
+            }
+
+            return $http({ method: 'GET', url: dataUrl })
                 .then(function (result) {
-                    solarData = _.sortBy(result.data, ['dateTime']);
+                    var solarData = _.sortBy(result.data, ['dateTime']);
 
-                    vm.solarData = _(solarData)
+                    data = _(solarData)
                         .filter(function (date) {
-                            return moment(date.dateTime).valueOf() > vm.dateChange.startDate
-                                && moment(date.dateTime).valueOf() < vm.dateChange.endDate;
+                            return moment(date.dateTime).valueOf() >= startDate
+                                && moment(date.dateTime).valueOf() < endDate;
                         })
                         .value();
+
+                    if (url) {
+                        if (isPredicted) {
+                            forecastedData = data;
+                            console.log('forecastedData', forecastedData);
+                        } else {
+                            observationData = data;
+                        }
+                    } else {
+                        observationData = data;
+                    }
                 });
         }
 
@@ -95,6 +193,7 @@
                 return e.energy;
             });
 
+            console.log(vm.splineData.length);
             return vm.splineData;
         }
 
@@ -136,6 +235,7 @@
                     }]
                 }
             } else {
+                console.log(_.get(vm.dateChange, ['dateRange', 'date']));
                 output = {
                     title: {
                         text: 'Time'
@@ -149,7 +249,7 @@
                     plotLines: [{
                         color: '#696969', // Color value
                         dashStyle: 'longdashdot', // Style of the plot line. Default to solid
-                        value: moment().diff(moment(_.get(vm.dateChange, 'startDate')), 'days') * 24, // Value of where the line will appear
+                        value: _.get(vm.dateChange, ['dateRange', 'date']) * 24, // Value of where the line will appear
                         width: 2, // Width of the line
                         zIndex: 4
                     }],
@@ -159,7 +259,7 @@
                             text: 'Prediction range',
                             align: 'center'
                         },
-                        from: moment().diff(moment(_.get(vm.dateChange, 'startDate')), 'days') * 24,
+                        from: _.get(vm.dateChange, ['dateRange', 'date']) * 24,
                         to: 1000 // imaginary highest value to end plotband
                     }]
                 }

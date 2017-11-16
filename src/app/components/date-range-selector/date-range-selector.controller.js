@@ -42,11 +42,16 @@
             vm.selectedRange = obj;
             vm.errMessage = '';
             vm.dates = {
-                startDate: new Date(moment().subtract(obj.date, 'days').format('LLLL')),
-                endDate: obj.date === 1 ? new Date(moment().format('LLLL')): new Date(moment().add(obj.date, 'days').format('LLLL'))
+                startDate: obj.date === 1 ? moment().startOf('day').valueOf() : moment().subtract(obj.date * 24, 'hours').valueOf(),
+                endDate: obj.date === 1 ? moment().endOf('day').valueOf(): moment().add(obj.date * 24, 'hours').valueOf()
             };
 
-            applyDates();
+            $rootScope.$broadcast('date:change', {
+                startDate: obj.date === 1 ? moment().startOf('day').valueOf() : moment().subtract(obj.date * 24, 'hours').valueOf(),
+                endDate: obj.date === 1 ? moment().endOf('day').valueOf(): moment().add(obj.date * 24, 'hours').valueOf(),
+                dateRange: vm.selectedRange
+            });
+
         }
 
         function applyDatesThroughClick() {
