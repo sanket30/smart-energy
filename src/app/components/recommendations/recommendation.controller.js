@@ -5,14 +5,33 @@
         .module('smartEnergy.app.recommendation')
         .controller('RecommendationController', RecommendationController);
 
-    function RecommendationController($scope) {
+    function RecommendationController($scope, $element) {
         var vm = this;
         var startDate = moment().add(1, 'days').startOf('days');
         var endDate = moment().add(6, 'days').startOf('days');
+        var ticker = angular.element($element[0].querySelector('.myWrapper'));
+
+        vm.setIcon = setIcon;
 
         $scope.$on('forecast:change', function (event, val) {
             init(val);
         });
+
+
+        ticker.easyTicker({
+            direction: 'up',
+            interval: 2000
+        });
+
+        function setIcon() {
+            return _.sample([
+                '../../../_assets/images/weather/cloudy.svg',
+                '../../../_assets/images/weather/drizzle.svg',
+                '../../../_assets/images/weather/flurries.svg',
+                '../../../_assets/images/weather/rain.svg',
+                '../../../_assets/images/weather/thunderstorms.svg',
+                '../../../_assets/images/weather/windy.svg']);
+        }
 
         function init(val) {
             var solarDataArray24 = [];
@@ -34,12 +53,13 @@
             _.forEach(solarDataArray24, function (data) {
                 _.forEach(data, function (d, i) {
                     if (i > 14 && i < 23 && d.energy < 16) {
-                        vm.suggestions.push(d);
+                        vm.suggestions.push({
+                            value: d,
+                            icon: setIcon()
+                        });
                     }
                 })
             });
-
-
         }
     }
 }(_));

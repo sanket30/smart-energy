@@ -1,3 +1,18 @@
 .recommendation {
-
+  .heading {
+    color: #333333;
+    font-size: 18px;
+    text-align: center;
+    font-weight: 400;
+  }
+  .icon-size {
+    color: aqua;
+    height: 25px;
+  }
+  .outer{
+    border: 1px solid grey;
+    height: 30px;
+    font-size: 15px;
+    line-height: 25px;
+  }
 }
