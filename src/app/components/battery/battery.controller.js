@@ -26,6 +26,7 @@
 
         $scope.$on('data:change', function (event, val) {
             solarData = val.data;
+            vm.dateChange = val.dateChange
             init();
         });
 
@@ -36,6 +37,8 @@
 
         function generateBatteryUsage() {
             var initialValue = 50 + Math.random() * 10;
+            usedBatteryData = [];
+            storedBatteryData = [];
 
             _.forEach(solarData, function(data) {
                 var energy = parseFloat(data.energy);

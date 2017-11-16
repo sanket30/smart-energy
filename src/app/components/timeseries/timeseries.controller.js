@@ -34,7 +34,8 @@
                 getConsumptionData()
             ]).then(function () {
                 $rootScope.$broadcast('data:change', {
-                    data: vm.solarData
+                    data: vm.solarData,
+                    dateChange: vm.dateChange
                 });
                 $rootScope.$broadcast('forecast:change', {
                     solarData: solarData,
