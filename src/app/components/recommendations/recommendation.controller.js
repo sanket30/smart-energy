@@ -52,7 +52,7 @@
 
             _.forEach(solarDataArray24, function (data) {
                 _.forEach(data, function (d, i) {
-                    if (i > 9 && i < 17 && d.energy < 100) {
+                    if (i > 8 && i < 17 && d.energy < 16) {
                         vm.suggestions.push({
                             value: d,
                             icon: setIcon()
