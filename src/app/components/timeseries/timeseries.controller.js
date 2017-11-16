@@ -36,7 +36,7 @@
                 $rootScope.$broadcast('data:change', {
                     data: vm.solarData
                 });
-                $rootScope.$broadcast('forcast:change', {
+                $rootScope.$broadcast('forecast:change', {
                     solarData: solarData,
                     consumptionData: consumptionData
                 });
