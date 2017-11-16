@@ -5,8 +5,9 @@
         <div class="panel-body">
             <div ng-repeat="val in vm.values"
                  class="text-center">
-                <span ng-style="vm.width"
-                      class="pull-left">
+                <div>
+                    <span ng-style="vm.width"
+                          class="pull-left card">
                     <img class="icon-size"
                          ng-src="{{val.name}}">
                     <div class="value">
@@ -26,6 +27,7 @@
                         {{val.footer}}
                     </div>
                 </span>
+                </div>
             </div>
         </div>
     </div>

@@ -35,7 +35,7 @@
                 name: '../../../_assets/images/gas.svg',
                 suffix: 'gallons',
                 value: 0,
-                footer: 'gasoline saved'
+                footer: 'petroleum saved'
             }, {
                 name: '../../../_assets/images/drop.svg',
                 suffix: 'gallons',

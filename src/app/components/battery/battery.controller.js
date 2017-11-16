@@ -115,7 +115,7 @@
                         zIndex: 4
                     }],
                     plotBands: [{ // mark the weekend
-                        color: '#FCFFC5',
+                        color: '#ffae83',
                         from: moment().hour() + moment().minute() / 60,
                         to: 24
                     }]
@@ -150,15 +150,13 @@
         }
 
         function getChartConfig() {
-            var a = usedBatteryData;
-            var b = [107, 31, 635, 203, 2, 107, 31, 635, 203, 2, 107, 31, 635, 203, 2, 107, 31, 635, 203, 2, 107, 31, 635, 203];
-
             return {
                 title: {
                     text: 'Battery Level'
                 },
                 chart: {
-                    type: 'column'
+                    type: 'column',
+                    backgroundColor: '#eff2f9'
                 },
                 exporting: {
                     enabled: false

@@ -127,7 +127,8 @@
                     text: 'Solar Consumption'
                 },
                 chart: {
-                    type: 'column'
+                    type: 'column',
+                    backgroundColor: '#eff2f9'
                 },
                 exporting: {
                     enabled: false
