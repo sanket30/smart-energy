@@ -53,6 +53,7 @@
             vm.categories = _.map(vm.data, function (e) {
                 return moment(e.dateTime).tz('UTC');
             });
+
             return vm.categories;
         }
 
@@ -60,22 +61,8 @@
             vm.splineData = _.map(vm.data, function (e) {
                 return e.energy;
             });
-            vm.min = _.min(vm.splineData);
-            vm.max = _.max(vm.splineData);
 
             return vm.splineData;
-        }
-
-        function getMinValue() {
-            vm.min = _.min(vm.splineData);
-
-            return vm.min;
-        }
-
-        function getMaxValue() {
-            vm.max = _.max(vm.splineData);
-
-            return vm.max;
         }
 
         function getXAxis() {
@@ -83,6 +70,9 @@
 
             if (_.get(vm.dateChange, ['dateRange', 'name']) === 'daily') {
                 output = {
+                    title: {
+                        text: 'Time'
+                    },
                     categories: getCategories(),
                     type: 'datetime',
                     tickInterval: 2,
@@ -97,13 +87,16 @@
                         zIndex: 4
                     }],
                     plotBands: [{ // mark the weekend
-                        color: '#FCFFC5',
+                        color: '#ffae83',
                         from: moment().hour() + moment().minute() / 60,
                         to: 24
                     }]
                 }
             } else {
                 output = {
+                    title: {
+                        text: 'Time'
+                    },
                     categories: getCategories(),
                     type: 'datetime',
                     tickInterval: 20,
@@ -118,7 +111,7 @@
                         zIndex: 4
                     }],
                     plotBands: [{ // mark the weekend
-                        color: '#FCFFC5',
+                        color: '#ffae83',
                         from: moment().diff(moment(_.get(vm.dateChange, 'startDate')), 'days') * 24,
                         to: 1000 // imaginary highest value to end plotband
                     }]
@@ -130,23 +123,35 @@
 
         function getChartConfig() {
             return {
+                title: {
+                    text: 'Solar Consumption'
+                },
                 chart: {
                     type: 'column'
+                },
+                exporting: {
+                    enabled: false
+                },
+                credits: {
+                    enabled: false
                 },
                 series: [{
                     yAxis: 0,
                     stacking: 'normal',
+                    name: 'Solar Delivered',
                     data: getSplineData()
                 }, {
                     yAxis: 0,
                     type: 'spline',
+                    name: 'Usage Point',
                     data: getSplineData()
                 }],
                 xAxis: getXAxis(),
-                yAxis: [{ // Primary yAxis
-                    min: getMinValue(),
-                    max: getMaxValue(),
-                    tickInterval: 10
+                yAxis: [{
+                    tickInterval: 10,
+                    title: {
+                        text: 'KWh'
+                    }
                 }]
             };
         }

@@ -7,6 +7,9 @@
 
     function timeSeriesController($q, $http, $rootScope, $scope) {
         var vm = this;
+        var solarData;
+        var consumptionData;
+
 
         vm.categories = [];
         vm.dateChange = {
@@ -33,6 +36,10 @@
                 $rootScope.$broadcast('data:change', {
                     data: vm.solarData
                 });
+                $rootScope.$broadcast('forcast:change', {
+                    solarData: solarData,
+                    consumptionData: consumptionData
+                });
                 plotChart();
             });
         }
@@ -43,8 +50,9 @@
 
             return $http({ method: 'GET', url: url })
                 .then(function (result) {
-                    vm.solarData = _(result.data)
-                        .sortBy('dateTime')
+                    solarData = _.sortBy(result.data, ['dateTime']);
+
+                    vm.solarData = _(solarData)
                         .filter(function (date) {
                             return moment(date.dateTime).valueOf() > vm.dateChange.startDate
                                 && moment(date.dateTime).valueOf() < vm.dateChange.endDate;
@@ -58,8 +66,9 @@
 
             return $http({ method: 'GET', url: url })
                 .then(function (result) {
-                    vm.consumptionData = _(result.data)
-                        .sortBy('dateTime')
+                    consumptionData = _.sortBy(result.data, ['dateTime']);
+
+                    vm.consumptionData = _(consumptionData)
                         .filter(function (date) {
                             return moment(date.dateTime).valueOf() > vm.dateChange.startDate
                                 && moment(date.dateTime).valueOf() < vm.dateChange.endDate;
@@ -76,6 +85,7 @@
             vm.categories = _.map(vm.solarData, function (e) {
                 return moment(e.dateTime).tz('UTC');
             });
+
             return vm.categories;
         }
 
@@ -98,6 +108,9 @@
 
             if (_.get(vm.dateChange, ['dateRange', 'name']) === 'daily') {
                 output = {
+                    title: {
+                        text: 'Time'
+                    },
                     categories: getCategories(),
                     type: 'datetime',
                     tickInterval: 2,
@@ -119,6 +132,9 @@
                 }
             } else {
                 output = {
+                    title: {
+                        text: 'Time'
+                    },
                     categories: getCategories(),
                     type: 'datetime',
                     tickInterval: 20,
@@ -145,26 +161,43 @@
 
         function getChartConfig() {
             return {
+                title: {
+                    text: 'Energy Consumption'
+                },
                 chart: {
                     type: 'column'
                 },
-                series: [{
-                    yAxis: 0,
-                    stacking: 'normal',
-                    data: getConsumptionSplineData()
+                exporting: {
+                    enabled: false
                 },
+                credits: {
+                    enabled: false
+                },
+                series: [
                     {
-                    yAxis: 0,
-                    stacking: 'normal',
+                        yAxis: 0,
+                        stacking: 'normal',
+                        name: 'Grid Delivered',
+                        data: getConsumptionSplineData()
+                    },
+                    {
+                        yAxis: 0,
+                        stacking: 'normal',
+                        name: 'Renewable Delivered',
                         data: getSolarSplineData()
-                }, {
-                    yAxis: 0,
-                    type: 'spline',
+                    }, {
+                        yAxis: 0,
+                        type: 'spline',
+                        name: 'Historic Usage',
                         data: getSolarSplineData()
-                }],
+                    }
+                ],
                 xAxis: getXAxis(),
                 yAxis: [{
-                    tickInterval: 10
+                    tickInterval: 10,
+                    title: {
+                        text: 'KWh'
+                    }
                 }]
             };
         }
