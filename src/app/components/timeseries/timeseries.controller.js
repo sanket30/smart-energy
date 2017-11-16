@@ -119,14 +119,14 @@
                         format: '{value:%H:%M}'
                     },
                     plotLines: [{
-                        color: 'red', // Color value
+                        color: '#696969', // Color value
                         dashStyle: 'longdashdot', // Style of the plot line. Default to solid
                         value: moment().hour() + moment().minute() / 60, // Value of where the line will appear
                         width: 2, // Width of the line
                         zIndex: 4
                     }],
                     plotBands: [{ // mark the weekend
-                        color: '#ffae83',
+                        color: '#DCDCDC',
                         from: moment().hour() + moment().minute() / 60,
                         to: 24
                     }]
@@ -143,14 +143,14 @@
                         format: '{value:%b:%e}'
                     },
                     plotLines: [{
-                        color: 'red', // Color value
+                        color: '#696969', // Color value
                         dashStyle: 'longdashdot', // Style of the plot line. Default to solid
                         value: moment().diff(moment(_.get(vm.dateChange, 'startDate')), 'days') * 24, // Value of where the line will appear
                         width: 2, // Width of the line
                         zIndex: 4
                     }],
                     plotBands: [{ // mark the weekend
-                        color: '#ffae83',
+                        color: '#DCDCDC',
                         from: moment().diff(moment(_.get(vm.dateChange, 'startDate')), 'days') * 24,
                         to: 1000 // imaginary highest value to end plotband
                     }]
@@ -186,6 +186,7 @@
                     {
                         yAxis: 0,
                         stacking: 'normal',
+                        color: '#7ED41C',
                         name: 'Renewable Delivered',
                         data: getSolarSplineData()
                     }, {

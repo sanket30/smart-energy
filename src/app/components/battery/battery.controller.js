@@ -57,7 +57,7 @@
                     usedEnergy = initialValue * 0.75;
                     storedEnergy = initialValue * 0.25 + energy * 0.8;
                 }
-                
+
 
                 if (storedEnergy > MAX_STORAGE) {
                     usedEnergy += (storedEnergy - MAX_STORAGE);
@@ -66,7 +66,7 @@
                     usedEnergy -= (EMERGENCY_STORAGE - storedEnergy);
                     storedEnergy = EMERGENCY_STORAGE;
                 }
-                
+
                 initialValue = storedEnergy;
 
                 usedBatteryData.push(parseFloat((usedEnergy).toFixed(2)));
@@ -108,14 +108,14 @@
                         format: '{value:%H:%M}'
                     },
                     plotLines: [{
-                        color: 'red', // Color value
+                        color: '#696969', // Color value
                         dashStyle: 'longdashdot', // Style of the plot line. Default to solid
                         value: moment().hour() + moment().minute() / 60, // Value of where the line will appear
                         width: 2, // Width of the line
                         zIndex: 4
                     }],
                     plotBands: [{ // mark the weekend
-                        color: '#ffae83',
+                        color: '#DCDCDC',
                         from: moment().hour() + moment().minute() / 60,
                         to: 24
                     }]
@@ -132,14 +132,14 @@
                         format: '{value:%b:%e}'
                     },
                     plotLines: [{
-                        color: 'red', // Color value
+                        color: '#696969', // Color value
                         dashStyle: 'longdashdot', // Style of the plot line. Default to solid
                         value: moment().diff(moment(_.get(vm.dateChange, 'startDate')), 'days') * 24, // Value of where the line will appear
                         width: 2, // Width of the line
                         zIndex: 4
                     }],
                     plotBands: [{ // mark the weekend
-                        color: '#ffae83',
+                        color: '#DCDCDC',
                         from: moment().diff(moment(_.get(vm.dateChange, 'startDate')), 'days') * 24,
                         to: 1000 // imaginary highest value to end plotband
                     }]
@@ -168,10 +168,12 @@
                 series: [
                 {
                     yAxis: 0,
+                    color: '#297DDC',
                     name: 'Battery Available',
                     data: storedBatteryData
                 },{
                     yAxis: 0,
+                    color: '#2AC7DC',
                     name: 'Battery Used',
                     data: usedBatteryData
                 }],
