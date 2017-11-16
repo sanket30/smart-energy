@@ -1970,7 +1970,7 @@
   "dateTime": "2017-11-20T23:00:00.331Z",
   "endTime": "2017-11-20T23:59:59.331Z",
   "unit": "kWh",
-  "reading": "424.68",
+  "reading": "24.68",
   "solarEnergy": "93.43",
   "gridEnergy": "331.25",
   "costSaving": "$12.15"
@@ -1978,7 +1978,7 @@
   "dateTime": "2017-11-20T22:00:00.331Z",
   "endTime": "2017-11-20T22:59:59.331Z",
   "unit": "kWh",
-  "reading": "288.04",
+  "reading": "88.04",
   "solarEnergy": "63.37",
   "gridEnergy": "224.67",
   "costSaving": "$8.24"
@@ -1986,7 +1986,7 @@
   "dateTime": "2017-11-20T21:00:00.331Z",
   "endTime": "2017-11-20T21:59:59.331Z",
   "unit": "kWh",
-  "reading": "464.01",
+  "reading": "64.01",
   "solarEnergy": "102.08",
   "gridEnergy": "361.93",
   "costSaving": "$13.27"
@@ -1994,7 +1994,7 @@
   "dateTime": "2017-11-20T20:00:00.331Z",
   "endTime": "2017-11-20T20:59:59.331Z",
   "unit": "kWh",
-  "reading": "306.47",
+  "reading": "06.47",
   "solarEnergy": "67.42",
   "gridEnergy": "239.05",
   "costSaving": "$8.77"
@@ -2002,7 +2002,7 @@
   "dateTime": "2017-11-20T19:00:00.331Z",
   "endTime": "2017-11-20T19:59:59.331Z",
   "unit": "kWh",
-  "reading": "319.64",
+  "reading": "19.64",
   "solarEnergy": "70.32",
   "gridEnergy": "249.32",
   "costSaving": "$9.14"
@@ -2010,7 +2010,7 @@
   "dateTime": "2017-11-20T18:00:00.331Z",
   "endTime": "2017-11-20T18:59:59.331Z",
   "unit": "kWh",
-  "reading": "463.43",
+  "reading": "63.43",
   "solarEnergy": "101.95",
   "gridEnergy": "361.47",
   "costSaving": "$13.25"
@@ -2018,7 +2018,7 @@
   "dateTime": "2017-11-20T17:00:00.331Z",
   "endTime": "2017-11-20T17:59:59.331Z",
   "unit": "kWh",
-  "reading": "305.32",
+  "reading": "75.32",
   "solarEnergy": "67.17",
   "gridEnergy": "238.15",
   "costSaving": "$8.73"
@@ -2026,7 +2026,7 @@
   "dateTime": "2017-11-20T16:00:00.331Z",
   "endTime": "2017-11-20T16:59:59.331Z",
   "unit": "kWh",
-  "reading": "313.52",
+  "reading": "33.52",
   "solarEnergy": "68.97",
   "gridEnergy": "244.54",
   "costSaving": "$8.97"
@@ -2034,7 +2034,7 @@
   "dateTime": "2017-11-20T15:00:00.331Z",
   "endTime": "2017-11-20T15:59:59.331Z",
   "unit": "kWh",
-  "reading": "463.72",
+  "reading": "63.72",
   "solarEnergy": "102.02",
   "gridEnergy": "361.70",
   "costSaving": "$13.26"
@@ -2162,7 +2162,7 @@
   "dateTime": "2017-11-19T23:00:00.331Z",
   "endTime": "2017-11-19T23:59:59.331Z",
   "unit": "kWh",
-  "reading": "4.18",
+  "reading": "34.18",
   "solarEnergy": "0.92",
   "gridEnergy": "3.26",
   "costSaving": "$0.12"
@@ -2170,7 +2170,7 @@
   "dateTime": "2017-11-19T22:00:00.331Z",
   "endTime": "2017-11-19T22:59:59.331Z",
   "unit": "kWh",
-  "reading": "2.68",
+  "reading": "42.68",
   "solarEnergy": "0.59",
   "gridEnergy": "2.09",
   "costSaving": "$0.08"
@@ -2178,7 +2178,7 @@
   "dateTime": "2017-11-19T21:00:00.331Z",
   "endTime": "2017-11-19T21:59:59.331Z",
   "unit": "kWh",
-  "reading": "3.08",
+  "reading": "43.08",
   "solarEnergy": "0.68",
   "gridEnergy": "2.40",
   "costSaving": "$0.09"
@@ -2186,7 +2186,7 @@
   "dateTime": "2017-11-19T20:00:00.331Z",
   "endTime": "2017-11-19T20:59:59.331Z",
   "unit": "kWh",
-  "reading": "3.77",
+  "reading": "43.77",
   "solarEnergy": "0.83",
   "gridEnergy": "2.94",
   "costSaving": "$0.11"
@@ -2194,7 +2194,7 @@
   "dateTime": "2017-11-19T19:00:00.331Z",
   "endTime": "2017-11-19T19:59:59.331Z",
   "unit": "kWh",
-  "reading": "2.58",
+  "reading": "52.58",
   "solarEnergy": "0.57",
   "gridEnergy": "2.01",
   "costSaving": "$0.07"
@@ -2202,7 +2202,7 @@
   "dateTime": "2017-11-19T18:00:00.331Z",
   "endTime": "2017-11-19T18:59:59.331Z",
   "unit": "kWh",
-  "reading": "4.08",
+  "reading": "54.08",
   "solarEnergy": "0.90",
   "gridEnergy": "3.18",
   "costSaving": "$0.12"
@@ -2210,7 +2210,7 @@
   "dateTime": "2017-11-19T17:00:00.331Z",
   "endTime": "2017-11-19T17:59:59.331Z",
   "unit": "kWh",
-  "reading": "3.80",
+  "reading": "49.80",
   "solarEnergy": "0.83",
   "gridEnergy": "2.96",
   "costSaving": "$0.11"
@@ -2218,7 +2218,7 @@
   "dateTime": "2017-11-19T16:00:00.331Z",
   "endTime": "2017-11-19T16:59:59.331Z",
   "unit": "kWh",
-  "reading": "2.91",
+  "reading": "52.91",
   "solarEnergy": "0.64",
   "gridEnergy": "2.27",
   "costSaving": "$0.08"
@@ -2226,7 +2226,7 @@
   "dateTime": "2017-11-19T15:00:00.331Z",
   "endTime": "2017-11-19T15:59:59.331Z",
   "unit": "kWh",
-  "reading": "3.94",
+  "reading": "53.94",
   "solarEnergy": "0.87",
   "gridEnergy": "3.07",
   "costSaving": "$0.11"
@@ -2234,7 +2234,7 @@
   "dateTime": "2017-11-19T14:00:00.331Z",
   "endTime": "2017-11-19T14:59:59.331Z",
   "unit": "kWh",
-  "reading": "0.24",
+  "reading": "75.24",
   "solarEnergy": "0.05",
   "gridEnergy": "0.19",
   "costSaving": "$0.01"
@@ -2242,7 +2242,7 @@
   "dateTime": "2017-11-19T13:00:00.331Z",
   "endTime": "2017-11-19T13:59:59.331Z",
   "unit": "kWh",
-  "reading": "0.14",
+  "reading": "70.14",
   "solarEnergy": "0.03",
   "gridEnergy": "0.11",
   "costSaving": "$0.00"
@@ -2250,7 +2250,7 @@
   "dateTime": "2017-11-19T12:00:00.331Z",
   "endTime": "2017-11-19T12:59:59.331Z",
   "unit": "kWh",
-  "reading": "0.22",
+  "reading": "69.22",
   "solarEnergy": "0.05",
   "gridEnergy": "0.17",
   "costSaving": "$0.01"
@@ -2258,7 +2258,7 @@
   "dateTime": "2017-11-19T11:00:00.331Z",
   "endTime": "2017-11-19T11:59:59.331Z",
   "unit": "kWh",
-  "reading": "0.16",
+  "reading": "70.16",
   "solarEnergy": "0.03",
   "gridEnergy": "0.12",
   "costSaving": "$0.00"
@@ -2266,7 +2266,7 @@
   "dateTime": "2017-11-19T10:00:00.331Z",
   "endTime": "2017-11-19T10:59:59.331Z",
   "unit": "kWh",
-  "reading": "0.17",
+  "reading": "58.17",
   "solarEnergy": "0.04",
   "gridEnergy": "0.13",
   "costSaving": "$0.00"
@@ -2274,7 +2274,7 @@
   "dateTime": "2017-11-19T09:00:00.331Z",
   "endTime": "2017-11-19T09:59:59.331Z",
   "unit": "kWh",
-  "reading": "0.22",
+  "reading": "59.22",
   "solarEnergy": "0.05",
   "gridEnergy": "0.17",
   "costSaving": "$0.01"
@@ -2282,7 +2282,7 @@
   "dateTime": "2017-11-19T08:00:00.331Z",
   "endTime": "2017-11-19T08:59:59.331Z",
   "unit": "kWh",
-  "reading": "0.16",
+  "reading": "60.16",
   "solarEnergy": "0.04",
   "gridEnergy": "0.12",
   "costSaving": "$0.00"
@@ -2290,7 +2290,7 @@
   "dateTime": "2017-11-19T07:00:00.331Z",
   "endTime": "2017-11-19T07:59:59.331Z",
   "unit": "kWh",
-  "reading": "0.23",
+  "reading": "50.23",
   "solarEnergy": "0.05",
   "gridEnergy": "0.18",
   "costSaving": "$0.01"
@@ -2298,7 +2298,7 @@
   "dateTime": "2017-11-19T06:00:00.331Z",
   "endTime": "2017-11-19T06:59:59.331Z",
   "unit": "kWh",
-  "reading": "0.15",
+  "reading": "55.15",
   "solarEnergy": "0.03",
   "gridEnergy": "0.12",
   "costSaving": "$0.00"
@@ -2306,7 +2306,7 @@
   "dateTime": "2017-11-19T05:00:00.331Z",
   "endTime": "2017-11-19T05:58:59.331Z",
   "unit": "kWh",
-  "reading": "1.17",
+  "reading": "41.17",
   "solarEnergy": "0.26",
   "gridEnergy": "0.91",
   "costSaving": "$0.03"
@@ -2314,7 +2314,7 @@
   "dateTime": "2017-11-19T04:00:00.331Z",
   "endTime": "2017-11-19T04:59:59.331Z",
   "unit": "kWh",
-  "reading": "0.76",
+  "reading": "50.76",
   "solarEnergy": "0.17",
   "gridEnergy": "0.59",
   "costSaving": "$0.02"
@@ -2322,7 +2322,7 @@
   "dateTime": "2017-11-19T03:00:00.331Z",
   "endTime": "2017-11-19T03:59:59.331Z",
   "unit": "kWh",
-  "reading": "1.26",
+  "reading": "41.26",
   "solarEnergy": "0.28",
   "gridEnergy": "0.98",
   "costSaving": "$0.04"
@@ -2330,7 +2330,7 @@
   "dateTime": "2017-11-19T02:00:00.331Z",
   "endTime": "2017-11-19T02:59:59.331Z",
   "unit": "kWh",
-  "reading": "0.82",
+  "reading": "48.82",
   "solarEnergy": "0.18",
   "gridEnergy": "0.64",
   "costSaving": "$0.02"
@@ -2338,7 +2338,7 @@
   "dateTime": "2017-11-19T01:00:00.331Z",
   "endTime": "2017-11-19T01:59:59.331Z",
   "unit": "kWh",
-  "reading": "0.69",
+  "reading": "50.69",
   "solarEnergy": "0.15",
   "gridEnergy": "0.54",
   "costSaving": "$0.02"
@@ -2346,7 +2346,7 @@
   "dateTime": "2017-11-19T00:00:00.331Z",
   "endTime": "2017-11-19T00:59:59.331Z",
   "unit": "kWh",
-  "reading": "1.24",
+  "reading": "51.24",
   "solarEnergy": "0.27",
   "gridEnergy": "0.97",
   "costSaving": "$0.04"
@@ -2354,7 +2354,7 @@
   "dateTime": "2017-11-18T23:00:00.331Z",
   "endTime": "2017-11-18T23:59:59.331Z",
   "unit": "kWh",
-  "reading": "5.72",
+  "reading": "45.72",
   "solarEnergy": "1.26",
   "gridEnergy": "4.46",
   "costSaving": "$0.16"
@@ -2362,7 +2362,7 @@
   "dateTime": "2017-11-18T22:00:00.331Z",
   "endTime": "2017-11-18T22:59:59.331Z",
   "unit": "kWh",
-  "reading": "3.40",
+  "reading": "53.40",
   "solarEnergy": "0.75",
   "gridEnergy": "2.65",
   "costSaving": "$0.10"
@@ -2370,7 +2370,7 @@
   "dateTime": "2017-11-18T21:00:00.331Z",
   "endTime": "2017-11-18T21:59:59.331Z",
   "unit": "kWh",
-  "reading": "3.39",
+  "reading": "33.39",
   "solarEnergy": "0.75",
   "gridEnergy": "2.65",
   "costSaving": "$0.10"
@@ -2378,7 +2378,7 @@
   "dateTime": "2017-11-18T20:00:00.331Z",
   "endTime": "2017-11-18T20:59:59.331Z",
   "unit": "kWh",
-  "reading": "5.18",
+  "reading": "65.18",
   "solarEnergy": "1.14",
   "gridEnergy": "4.04",
   "costSaving": "$0.15"
@@ -2386,7 +2386,7 @@
   "dateTime": "2017-11-18T19:00:00.331Z",
   "endTime": "2017-11-18T19:59:59.331Z",
   "unit": "kWh",
-  "reading": "5.55",
+  "reading": "35.55",
   "solarEnergy": "1.22",
   "gridEnergy": "4.33",
   "costSaving": "$0.16"
@@ -2394,7 +2394,7 @@
   "dateTime": "2017-11-18T18:00:00.331Z",
   "endTime": "2017-11-18T18:59:59.331Z",
   "unit": "kWh",
-  "reading": "3.44",
+  "reading": "43.44",
   "solarEnergy": "0.76",
   "gridEnergy": "2.68",
   "costSaving": "$0.10"
@@ -2402,7 +2402,7 @@
   "dateTime": "2017-11-18T17:00:00.331Z",
   "endTime": "2017-11-18T17:59:59.331Z",
   "unit": "kWh",
-  "reading": "5.43",
+  "reading": "35.43",
   "solarEnergy": "1.20",
   "gridEnergy": "4.24",
   "costSaving": "$0.16"
@@ -2410,7 +2410,7 @@
   "dateTime": "2017-11-18T16:00:00.331Z",
   "endTime": "2017-11-18T16:59:59.331Z",
   "unit": "kWh",
-  "reading": "3.87",
+  "reading": "33.87",
   "solarEnergy": "0.85",
   "gridEnergy": "3.02",
   "costSaving": "$0.11"
@@ -2418,7 +2418,7 @@
   "dateTime": "2017-11-18T15:00:00.331Z",
   "endTime": "2017-11-18T15:59:59.331Z",
   "unit": "kWh",
-  "reading": "5.20",
+  "reading": "35.20",
   "solarEnergy": "1.14",
   "gridEnergy": "4.05",
   "costSaving": "$0.15"
@@ -2426,7 +2426,7 @@
   "dateTime": "2017-11-18T14:00:00.331Z",
   "endTime": "2017-11-18T14:59:59.331Z",
   "unit": "kWh",
-  "reading": "0.31",
+  "reading": "39.31",
   "solarEnergy": "0.07",
   "gridEnergy": "0.24",
   "costSaving": "$0.01"
@@ -2434,7 +2434,7 @@
   "dateTime": "2017-11-18T13:00:00.331Z",
   "endTime": "2017-11-18T13:59:59.331Z",
   "unit": "kWh",
-  "reading": "0.22",
+  "reading": "49.22",
   "solarEnergy": "0.05",
   "gridEnergy": "0.17",
   "costSaving": "$0.01"
@@ -2442,7 +2442,7 @@
   "dateTime": "2017-11-18T12:00:00.331Z",
   "endTime": "2017-11-18T12:59:59.331Z",
   "unit": "kWh",
-  "reading": "0.22",
+  "reading": "30.22",
   "solarEnergy": "0.05",
   "gridEnergy": "0.17",
   "costSaving": "$0.01"
@@ -2450,7 +2450,7 @@
   "dateTime": "2017-11-18T11:00:00.331Z",
   "endTime": "2017-11-18T11:59:59.331Z",
   "unit": "kWh",
-  "reading": "0.33",
+  "reading": "28.33",
   "solarEnergy": "0.07",
   "gridEnergy": "0.26",
   "costSaving": "$0.01"
@@ -2458,7 +2458,7 @@
   "dateTime": "2017-11-18T10:00:00.331Z",
   "endTime": "2017-11-18T10:59:59.331Z",
   "unit": "kWh",
-  "reading": "0.19",
+  "reading": "30.19",
   "solarEnergy": "0.04",
   "gridEnergy": "0.15",
   "costSaving": "$0.01"
@@ -2466,7 +2466,7 @@
   "dateTime": "2017-11-18T09:00:00.331Z",
   "endTime": "2017-11-18T09:59:59.331Z",
   "unit": "kWh",
-  "reading": "0.19",
+  "reading": "35.19",
   "solarEnergy": "0.04",
   "gridEnergy": "0.15",
   "costSaving": "$0.01"
@@ -2474,7 +2474,7 @@
   "dateTime": "2017-11-18T08:00:00.331Z",
   "endTime": "2017-11-18T08:59:59.331Z",
   "unit": "kWh",
-  "reading": "0.32",
+  "reading": "39.32",
   "solarEnergy": "0.07",
   "gridEnergy": "0.25",
   "costSaving": "$0.01"
@@ -2482,7 +2482,7 @@
   "dateTime": "2017-11-18T07:00:00.331Z",
   "endTime": "2017-11-18T07:59:59.331Z",
   "unit": "kWh",
-  "reading": "0.19",
+  "reading": "35.19",
   "solarEnergy": "0.04",
   "gridEnergy": "0.15",
   "costSaving": "$0.01"
@@ -2490,7 +2490,7 @@
   "dateTime": "2017-11-18T06:00:00.331Z",
   "endTime": "2017-11-18T06:59:59.331Z",
   "unit": "kWh",
-  "reading": "0.28",
+  "reading": "48.28",
   "solarEnergy": "0.06",
   "gridEnergy": "0.22",
   "costSaving": "$0.01"
@@ -2506,7 +2506,7 @@
   "dateTime": "2017-11-18T04:00:00.331Z",
   "endTime": "2017-11-18T04:59:59.331Z",
   "unit": "kWh",
-  "reading": "100.55",
+  "reading": "120.55",
   "solarEnergy": "22.12",
   "gridEnergy": "78.43",
   "costSaving": "$2.88"
