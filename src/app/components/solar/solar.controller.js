@@ -88,6 +88,10 @@
                     }],
                     plotBands: [{ // mark the weekend
                         color: '#DCDCDC',
+                        label: {
+                            text: 'Prediction range',
+                            align: 'center'
+                        },
                         from: moment().hour() + moment().minute() / 60,
                         to: 24
                     }]
@@ -112,6 +116,10 @@
                     }],
                     plotBands: [{ // mark the weekend
                         color: '#DCDCDC',
+                        label: {
+                            text: 'Prediction range',
+                            align: 'center'
+                        },
                         from: moment().diff(moment(_.get(vm.dateChange, 'startDate')), 'days') * 24,
                         to: 1000 // imaginary highest value to end plotband
                     }]

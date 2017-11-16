@@ -31,6 +31,9 @@
     });
 
     function init() {
+      for(var i = 0; i < 5; i++) {
+        _.set(vm.forecastData, moment().add(i + 1, 'days').startOf('day').format(DATE_FORMAT), {});
+      }
       _.filter(vm.solarData, function (data) {
         var date = moment(data.dateTime).startOf('day').format(DATE_FORMAT);
         var value = parseFloat(_.get(vm.forecastData, [date, 'solarEnergy'], 0)) + parseFloat(data.energy);
