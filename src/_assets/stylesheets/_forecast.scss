@@ -18,6 +18,8 @@
     text-align: center;
     margin-left: 15px;
     margin-top: 5px;
+    font-size: 1.4em;
+    border-top: 2px solid lightgray;
   }
 
   .panel {
@@ -26,5 +28,13 @@
 
   .horizontal-line {
     border: 1px solid;
+  }
+
+  .text-green {
+    color: green;
+  }
+
+  .text-red {
+    color: red;
   }
 }
