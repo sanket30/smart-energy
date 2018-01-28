@@ -17,6 +17,11 @@
             init(val);
         });
 
+        $scope.$on('date:change', function (event, val) {
+            startDate = val.startDate;
+            endDate = val.endDate;
+            init(val);
+        });
 
         ticker.easyTicker({
             direction: 'up',
